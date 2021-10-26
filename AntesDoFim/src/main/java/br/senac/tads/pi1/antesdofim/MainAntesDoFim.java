@@ -39,7 +39,8 @@ public class MainAntesDoFim {
                     System.out.println("SELECIONOU >>>>> Jogar");
                     break;
                 case 3:
-                    System.out.println("Autor: Rodrigo B. Carvalho");
+                    System.out.println("Autores: Rodrigo B. Carvalho");
+                    System.out.println("         Kaio Silva de Sena");
                     break;
                 case 4: 
                     System.out.println("Você saiu da aplicação. Até mais...");
