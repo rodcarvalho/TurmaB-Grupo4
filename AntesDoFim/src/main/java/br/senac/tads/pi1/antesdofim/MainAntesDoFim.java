@@ -6,18 +6,64 @@
 package br.senac.tads.pi1.antesdofim;
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
  * @author rodrigocarvalho
  */
 public class MainAntesDoFim {
+    
+    static Scanner input = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
      */
+    
+    public static int rolarDado() {
+        Random gerador = new Random();
+        int opcao = 0;
+        int numSorteado = -1;
+        System.out.println("Escolha qual dado você quer rolar.");
+        System.out.println("Caso o valor seja inválido, será rolado o dado de menor valor!");
+        System.out.println("1. D4 = Dado de 4 lados");
+        System.out.println("2. D6 = Dado de 6 lados");
+        System.out.println("3. D8 = Dado de 8 lados");
+        System.out.println("4. D10 = Dado de 10 lados");
+        System.out.println("5. D12 = Dado de 12 lados");
+        System.out.println("6. D20 = Dado de 20 lados");
+        
+        switch (opcao) {
+            case 1: 
+                numSorteado = gerador.nextInt(5);
+                break;
+            case 2: 
+                numSorteado = gerador.nextInt(7);
+                break;
+            case 3: 
+                numSorteado = gerador.nextInt(9);
+                break;
+            case 4: 
+                numSorteado = gerador.nextInt(11);
+                break;
+            case 5: 
+                numSorteado = gerador.nextInt(13);
+                break;
+            case 6: 
+                numSorteado = gerador.nextInt(21);
+                break;
+            default:
+                numSorteado = gerador.nextInt(5);
+                break;
+        }
+        if(numSorteado == 0) {
+            numSorteado += 1;
+        }
+        System.out.println("O dado deu " + numSorteado);
+        return numSorteado;
+    }
+    
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         int selectedOption;
         boolean gameOn = true;
         
@@ -37,6 +83,7 @@ public class MainAntesDoFim {
                     break;
                 case 2:
                     System.out.println("SELECIONOU >>>>> Jogar");
+                    rolarDado();
                     break;
                 case 3:
                     System.out.println("Autores: Rodrigo B. Carvalho");
