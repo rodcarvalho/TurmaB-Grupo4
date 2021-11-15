@@ -143,11 +143,11 @@ public class MainAntesDoFim {
     }
     
     // Função para ativar funções ou falas de acordo com a posição do jogador no mapa.
-    static void funcaoMapa(int x, int y){ 
+    static void funcaoMapa(int x, int y) { 
         
         if(x == 5 && y == 16 ){
             System.out.println("Família");
-            rolarDado();
+            rolarDado(5);
         }else if(x == 3 && y == 1){
             System.out.println("Aeroporto");
         }else if(x == 18 && y == 1){
@@ -158,11 +158,41 @@ public class MainAntesDoFim {
   
     }
     
+    static void funcaoRadio(int tempo) {
+        switch(tempo){
+            case 0:
+                System.out.println("Rádio: Autoridades aconselham a evacuação imediata da cidade.");
+                break;
+            case 5:
+                System.out.println("");
+                break;
+            case 10:
+                System.out.println("");
+                break;
+            case 15:
+                System.out.println("");
+                break;
+            case 20:
+                System.out.println("");
+                break;
+            case 25:
+                System.out.println("");
+                break;
+            case 30:
+                System.out.println("");
+                break;
+            case 40:
+                System.out.println("");
+                break;
+        }
+            
+    }
+    
     // Função para rolar dado com n lados
-    public static int rolarDado() {
+    public static int rolarDado(int opcao) {
         Random gerador = new Random();
-        int opcao = 0;
         int numSorteado = -1;
+        /*
         System.out.println("Escolha qual dado você quer rolar.");
         System.out.println("Caso o valor seja inválido, será rolado o dado de menor valor!");
         System.out.println("1. D4 = Dado de 4 lados");
@@ -171,6 +201,7 @@ public class MainAntesDoFim {
         System.out.println("4. D10 = Dado de 10 lados");
         System.out.println("5. D12 = Dado de 12 lados");
         System.out.println("6. D20 = Dado de 20 lados");
+        */
         
         switch (opcao) {
             case 1: 
