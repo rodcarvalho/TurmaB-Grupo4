@@ -12,6 +12,7 @@ import java.util.Random;
  *
  * @author rodrigocarvalho
  * @author Kaio
+ * @author Enrico
  */
 public class MainAntesDoFim {   
      
@@ -258,6 +259,7 @@ public class MainAntesDoFim {
                 case 3:
                     System.out.println("Autores: Rodrigo B. Carvalho");
                     System.out.println("         Kaio Silva de Sena");
+                    System.out.println("         Enrico Bispo Santos");
                     break;
                 case 4: 
                     System.out.println("Você saiu da aplicação. Até mais...");
