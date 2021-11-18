@@ -31,15 +31,15 @@ public class MainAntesDoFim {
             System.out.println(" 3. Créditos");
             System.out.println(" 4. Sair");
         
-            System.out.println("Digite o número da opção desejada: ");
+            System.out.println("Digite o número da opção desejada para usar o comando");
             selectedOption = input.next().charAt(0);
             
             switch(selectedOption) {
                 case '1':
-                    System.out.println("SELECIONOU >>>>> Instruções");
+                    System.out.println("Digite o número da opção desejada para usar o comando");
                     break;
                 case '2':
-                    System.out.println("SELECIONOU >>>>> Jogar");
+                    System.out.println("Jogo em andamento");
                     return gameOn = true;
                 case '3':
                     System.out.println("Autores: Rodrigo B. Carvalho");
@@ -274,9 +274,10 @@ public class MainAntesDoFim {
         int fraseNum = 0;
         char comando = 'a';
         
-        System.out.println("Digite \"próximo\" para proseguir a história");
-        System.out.println("Digite \"voltar\" para voltar a história");
-        System.out.println("Digite \"ajuda\" ver comandos");
+        System.out.println("Digite o número da opção desejada para usar o comando");
+                    System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
+                    System.out.println("2.  para usar o comando VOLTAR para voltar a história");
+                    System.out.println("3.  para usar o comando AJUDA para v");
         
         System.out.println("\n \n Você está voltando da sua hora de almoço no trabalho. "
                 + "Senta-se na sua mesa de trabalho e olha hora.");
@@ -288,16 +289,17 @@ public class MainAntesDoFim {
         while(introOn) {
             comando = input.next().charAt(0);
             switch (comando) {
-                case 'p':
+                case '1':
                     fraseNum++;
                     break;
-                case 'v':
+                case '2':
                     fraseNum--;
                     break;
-                case 'a':
-                    System.out.println("Digite \"próximo\" para proseguir a história");
-                    System.out.println("Digite \"voltar\" para voltar a história");
-                    System.out.println("Digite \"ajuda\" ver comandos");
+                case '3':
+                    System.out.println("Digite o número da opção desejada para usar o comando");
+                    System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
+                    System.out.println("2.  para usar o comando VOLTAR para voltar a história");
+                    System.out.println("3.  para usar o comando AJUDA para v");
                     break;
             }
             
