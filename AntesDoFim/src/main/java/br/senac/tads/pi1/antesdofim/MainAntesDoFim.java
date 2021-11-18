@@ -19,6 +19,40 @@ public class MainAntesDoFim {
     // Variáveis Globais
     static Scanner input = new Scanner(System.in);
     
+    // Main Menu
+    static boolean mainMenu() {
+        char selectedOption;
+        boolean gameOn = true;
+        
+        while (gameOn) {
+            System.out.println("##### --- MENU INICIAL --- #####");
+            System.out.println(" 1. Instruções");
+            System.out.println(" 2. Jogar");
+            System.out.println(" 3. Créditos");
+            System.out.println(" 4. Sair");
+        
+            System.out.println("Digite o número da opção desejada: ");
+            selectedOption = input.next().charAt(0);
+            
+            switch(selectedOption) {
+                case '1':
+                    System.out.println("SELECIONOU >>>>> Instruções");
+                    break;
+                case '2':
+                    System.out.println("SELECIONOU >>>>> Jogar");
+                    return gameOn = true;
+                case '3':
+                    System.out.println("Autores: Rodrigo B. Carvalho");
+                    System.out.println("         Kaio Silva de Sena");
+                    System.out.println("         Enrico Bispo Santos");
+                    break;
+                case '4': 
+                    System.out.println("Você saiu da aplicação. Até mais...");
+                    return gameOn = false;
+            }
+        }
+        return gameOn;
+    }
     // Função para movimentação do jogador no "mapa".
     static int[] funcaoMovimentacao(int x, int y, int tempo) { 
  
@@ -234,39 +268,71 @@ public class MainAntesDoFim {
         return numSorteado;
     }
     
-    // Main
-    public static void main(String[] args) {
-        int selectedOption;
-        boolean gameOn = true;
+    // Função Historia Intro
+    static void intro() {
+        boolean introOn = true;
+        int fraseNum = 0;
+        char comando = 'a';
         
-        while (gameOn) {
-            System.out.println("##### --- MENU INICIAL --- #####");
-            System.out.println(" 1. Instruções");
-            System.out.println(" 2. Jogar");
-            System.out.println(" 3. Créditos");
-            System.out.println(" 4. Sair");
+        System.out.println("Digite \"próximo\" para proseguir a história");
+        System.out.println("Digite \"voltar\" para voltar a história");
+        System.out.println("Digite \"ajuda\" ver comandos");
         
-            System.out.println("Digite o número da opção desejada: ");
-            selectedOption = input.nextInt();
+        System.out.println("\n \n Você está voltando da sua hora de almoço no trabalho. "
+                + "Senta-se na sua mesa de trabalho e olha hora.");
+        
+        // Instruções para chamar a função relógio
+        
+        System.out.println("- Ainda tenho alguns minutos antes de voltar ao trabalho. Vou ver alguns memes no celular.");
+        
+        while(introOn) {
+            comando = input.next().charAt(0);
+            switch (comando) {
+                case 'p':
+                    fraseNum++;
+                    break;
+                case 'v':
+                    fraseNum--;
+                    break;
+                case 'a':
+                    System.out.println("Digite \"próximo\" para proseguir a história");
+                    System.out.println("Digite \"voltar\" para voltar a história");
+                    System.out.println("Digite \"ajuda\" ver comandos");
+                    break;
+            }
             
-            switch(selectedOption) {
+            switch (fraseNum) {
                 case 1:
-                    System.out.println("SELECIONOU >>>>> Instruções");
+                    System.out.println("Você pega o celular, entra numa rede social e vê um "
+                    + "vídeo com algum membro do alto escalão do governo esbravejando"
+                    + " ofensas contra um outro país que há tempos tem uma disputa "
+                    + "com um país aliado.");
                     break;
+                    
                 case 2:
-                    System.out.println("SELECIONOU >>>>> Jogar");
+                    System.out.println("- Meu Deus! Esses caras só sabem falar besteira. "
+                    + "Isso ainda vai custar caro ao país.");
                     break;
+                    
                 case 3:
-                    System.out.println("Autores: Rodrigo B. Carvalho");
-                    System.out.println("         Kaio Silva de Sena");
-                    System.out.println("         Enrico Bispo Santos");
+                    System.out.println("Descendo mais o feed você começa a ver um, dois, três"
+                    + " vídeos iguais do que parece ser uma embarcação militar pegando fogo. ");
                     break;
-                case 4: 
-                    System.out.println("Você saiu da aplicação. Até mais...");
-                    gameOn = false;
+                case 4:
+                    System.out.println("Apesar de ser uma notícia um tanto quanto preocupante,"
+                     + " você continua rolando a página social abaixo e \"ignorando\" "
+                    + "aquele vídeo, afinal, quase todos os dias há alguma polêmica envolvendo"
+                    + " política e essa deve ser apenas mais uma.");
+                    introOn = false;
                     break;
             }
         }
+    }
+    // Main
+    public static void main(String[] args) {
+        
+        mainMenu();
+        intro();
         
         //Movimentação
         int[] mov;
