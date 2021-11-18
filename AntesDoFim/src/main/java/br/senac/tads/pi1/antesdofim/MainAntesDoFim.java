@@ -21,62 +21,86 @@ public class MainAntesDoFim {
     // Função para movimentação do jogador no "mapa".
     static int[] funcaoMovimentacao(int x, int y, int tempo) { 
  
-        char direcao;
+        char opcao;
         boolean mov = false;
         int[] retornoMov = new int[3];
         int penalidadeTempo = 5;
         
         while(mov != true){
-            System.out.println("1. Escolha a direção quer ir: ");
-            System.out.println("     Norte");
-            System.out.println("     Sul");
-            System.out.println("     Leste");
-            System.out.println("     Oeste");
+            System.out.println("1. Escolher a direção para ir. ");
             System.out.println("2. GPS");
             System.out.println("3. Relógio");
-            direcao = input.next().charAt(0);
+            opcao = input.next().charAt(0);
+            
+                switch(opcao){
+                    case '1':
+                        System.out.println("1. Norte");
+                        System.out.println("2. Sul");
+                        System.out.println("3. Leste");
+                        System.out.println("4. Oeste");
+                        char opcao2;
+                        opcao2 = input.next().charAt(0);
+                        
+                        while(opcao2 != '1' && opcao2 != '2' && opcao2 != '3' && opcao2 != '4'){
+                            System.out.println("Alternativa inválida, digite novamente:");
+                            opcao2 = input.next().charAt(0);
+                        }
+                        
+                        if(opcao2 == '1'){
+                            if(y == 1){
+                                System.out.println("Você está no limite");
+                            }else{
+                                y = y - 1;
+                                mov = true;
+                            }
+                            
+                        }else if(opcao2 == '2'){
+                            if(y == 10){
+                                System.out.println("Você está no limite");
+                            }else{
+                                y = y + 1;
+                                mov = true;
+                            }
+                            
+                        }else if(opcao2 == '3'){
+                            if(x == 10){
+                                System.out.println("Você está no limite.");
+                            }else{
+                                x = x + 1;
+                                mov = true;
+                            }
+                            
+                        }else if(opcao2 == '4'){
+                            if(x == 1){
+                                System.out.println("Você está no limite.");
+                            }else{
+                                x = x - 1;
+                                mov = true;
+                            }
+                        }
+                        break;
+                        
+                    case '2':
+                        funcaoGPS(x,y);
+                        break;
+                        
+                    case '3':
+                        funcaoRelogio(tempo);
+                        break;
+                        
+                    default:
+                        System.out.println("Alternativa inválida, digite novamente:");
+                        opcao = input.next().charAt(0);   
+            } 
+        }   
         
-            while(direcao != 'N' && direcao != 'S' && direcao != 'L' && direcao != 'O' && direcao!='G' && direcao!= 'R'){
-                System.out.println("Alternativa incorreta, digite novamente:");
-                direcao = input.next().charAt(0);
-            }
-        
-            switch(direcao){
-                case 'N':
-                    y = y - 1;
-                    tempo = tempo + penalidadeTempo;
-                    mov = true;
-                    break;
-                case 'S':
-                    y = y + 1;
-                    tempo = tempo + penalidadeTempo;
-                    mov = true;
-                    break;
-                case 'L':
-                    x = x + 1;
-                    tempo = tempo + penalidadeTempo;
-                    mov = true;
-                    break;
-                case 'O':
-                    x = x - 1;
-                    tempo = tempo + penalidadeTempo;
-                    mov = true;
-                    break;
-                case 'G':
-                    funcaoGPS(x,y);
-                    break;
-                case 'R':
-                    System.out.println("Relógio");
-                    break;
-            }      
-        }  
-        
+        tempo = tempo + penalidadeTempo;
         retornoMov[0] = x;
         retornoMov[1] = y;
         retornoMov[2] = tempo;
         return retornoMov;
     }
-    
+        
     // Função onde mostra a quantidade de casas necessarias para o jogador chegar em um determinado ponto
     static void funcaoGPS(int x, int y) { 
         
@@ -86,41 +110,81 @@ public class MainAntesDoFim {
             portoX = 20, portoY = 17,
             estradaX = 18, estradaY = 1;
         
+        System.out.print("Você está na Rua " + x + " com a Rua ");
+        switch(y){
+            case 1:
+                System.out.println("Abacaxi.");
+                break;
+            case 2:
+                System.out.println("Banana.");
+                break;
+            case 3:
+                System.out.println("Caju.");
+                break;
+            case 4:
+                System.out.println("Damasco.");
+                break;
+            case 5:
+                System.out.println("Embaúba.");
+                break;
+            case 6:
+                System.out.println("Framboesa.");
+                break;
+            case 7:
+                System.out.println("Goiaba.");
+                break;
+            case 8:
+                System.out.println("Heisteria.");
+                break;
+            case 9:
+                System.out.println("Imbu.");
+                break;
+            case 10:
+                System.out.println("Jabuticaba.");
+                break;
+        }
+        
         System.out.println("Opções GPS:");
-        System.out.println("   Familía");
-        System.out.println("   Aeroporto");
-        System.out.println("   Porto");
-        System.out.println("   Estrada");
+        System.out.println("1. Familía");
+        System.out.println("2. Aeroporto");
+        System.out.println("3. Porto");
+        System.out.println("4. Estrada");
         
         char entrada = input.next().charAt(0);
+        boolean controle = false;
         
-        while(entrada != 'F' && entrada != 'A' && entrada != 'P' && entrada != 'E'){
-            System.out.println("Alternativa inválida, digite novamente:");
-            entrada = input.next().charAt(0);        
+        while(controle != true) {
+            switch(entrada){
+                case '1':
+                    distX = familiaX - x;
+                    distY = familiaY - y;
+                    System.out.print("A casa dos pais");
+                    controle = true;
+                    break;
+                case '2':
+                    distX = aeroportoX - x;
+                    distY = aeroportoY - y;
+                    System.out.print("O aeroporto");
+                    controle = true;
+                    break;
+                case '3':
+                    distX = portoX - x;
+                    distY = portoY - y;
+                    System.out.print("O porto");
+                    controle = true;
+                    break;
+                case '4':
+                    distX = estradaX - x;
+                    distY = estradaY - y;
+                    System.out.print("A estrada");
+                    controle = true;
+                    break;
+                default:
+                    System.out.println("Alternativa inválida, digite novamente:");
+                    entrada = input.next().charAt(0);      
+            }
         }
         
-        switch(entrada){
-            case 'F':
-                distX = familiaX - x;
-                distY = familiaY - y;
-                System.out.print("A casa dos pais");
-                break;
-            case 'A':
-                distX = aeroportoX - x;
-                distY = aeroportoY - y;
-                System.out.print("O aeroporto"); 
-                break;
-            case 'P':
-                distX = portoX - x;
-                distY = portoY - y;
-                System.out.print("O porto");
-                break;
-            case 'E':
-                distX = estradaX - x;
-                distY = estradaY - y;
-                System.out.print("A estrada");
-                break;
-        }
         
         if(distY > 0){
             System.out.print(" está em " + distY + "Km para o sul");
@@ -158,10 +222,11 @@ public class MainAntesDoFim {
   
     }
     
+    // Função para ativar falas devido ao tempo.\
     static void funcaoRadio(int tempo) {
         switch(tempo){
             case 0:
-                System.out.println("Rádio: Autoridades aconselham a evacuação imediata da cidade.");
+                System.out.println("(Rádio) Autoridades aconselham a evacuação imediata da cidade.");
                 break;
             case 5:
                 System.out.println("");
@@ -188,10 +253,36 @@ public class MainAntesDoFim {
             
     }
     
+    // Função para mostrar o horário no jogo.
+    static void funcaoRelogio(int tempo){
+        int horario = 600, horarioTotal ,hora, min;
+        horarioTotal = horario + tempo;
+        
+        if(horarioTotal > 59){
+            hora = horarioTotal / 60;
+            min = horarioTotal % 60;
+        }else{
+            hora = 0;
+            min = horarioTotal;
+        }
+        
+        if(hora >= 10 && min >= 10){
+            System.out.println("São " + hora + ":" + min);
+        }else if(hora < 10 && min >= 10){
+            System.out.println("São 0" + hora +":" + min);
+        }else if(hora < 10 && min < 10){
+            System.out.println("São 0" + hora + ":0" + min);
+        }else if(hora >= 10 && min < 10){
+            System.out.println("São " + hora + ":0" +min);
+        }
+            
+    }
+    
     // Função para rolar dado com n lados
     public static int rolarDado(int opcao) {
         Random gerador = new Random();
         int numSorteado = -1;
+        
         /*
         System.out.println("Escolha qual dado você quer rolar.");
         System.out.println("Caso o valor seja inválido, será rolado o dado de menor valor!");
@@ -234,42 +325,12 @@ public class MainAntesDoFim {
     }
     
     // Main
-    public static void main(String[] args) {
-        int selectedOption;
-        boolean gameOn = true;
-        
-        while (gameOn) {
-            System.out.println("##### --- MENU INICIAL --- #####");
-            System.out.println(" 1. Instruções");
-            System.out.println(" 2. Jogar");
-            System.out.println(" 3. Créditos");
-            System.out.println(" 4. Sair");
-        
-            System.out.println("Digite o número da opção desejada: ");
-            selectedOption = input.nextInt();
-            
-            switch(selectedOption) {
-                case 1:
-                    System.out.println("SELECIONOU >>>>> Instruções");
-                    break;
-                case 2:
-                    System.out.println("SELECIONOU >>>>> Jogar");
-                    break;
-                case 3:
-                    System.out.println("Autores: Rodrigo B. Carvalho");
-                    System.out.println("         Kaio Silva de Sena");
-                    break;
-                case 4: 
-                    System.out.println("Você saiu da aplicação. Até mais...");
-                    gameOn = false;
-                    break;
-            }
-        }
-        
+    public static void main(String[] args) {   
         //Movimentação
         int[] mov;
         int x = 10, y = 10, tempo = 0;
         boolean finish = false;
+        
         
         while(finish != true){ //while somente para repetição.
             mov = funcaoMovimentacao(x,y,tempo);
@@ -277,6 +338,9 @@ public class MainAntesDoFim {
             x = mov[0];
             y = mov[1];
             tempo = mov[2];
+            
+            System.out.println(x);
+            System.out.println(y);
             
             funcaoMapa(x,y);
         }
