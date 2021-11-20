@@ -40,7 +40,8 @@ public class MainAntesDoFim {
                     break;
                 case '2':
                     System.out.println("Jogo em andamento");
-                    return gameOn = true;
+                    gameOn = true;
+                    return gameOn;
                 case '3':
                     System.out.println("Autores: Rodrigo B. Carvalho");
                     System.out.println("         Kaio Silva de Sena");
@@ -48,102 +49,122 @@ public class MainAntesDoFim {
                     break;
                 case '4': 
                     System.out.println("Você saiu da aplicação. Até mais...");
-                    return gameOn = false;
+                    gameOn = false;
+                    return gameOn;     
             }
         }
-        return gameOn;
+        return  gameOn;
     }
+    
     // Função para movimentação do jogador no "mapa".
     static int[] funcaoMovimentacao(int x, int y, int tempo) { 
- 
         char opcao;
         boolean mov = false;
-        int[] retornoMov = new int[3];
+        int[] retornoMov = new int[4];
         int penalidadeTempo = 5;
+        int contGame;
+        boolean gameOn = true;
         
-        while(mov != true){
+        while(mov != true && gameOn != false){
             System.out.println("1. Escolher a direção para ir. ");
-            System.out.println("2. GPS");
-            System.out.println("3. Relógio");
+            System.out.println("2. Olhar o GPS");
+            System.out.println("3. Olhar o relógio");
+            System.out.println("4. Voltar ao menu");
             opcao = input.next().charAt(0);
             
-                switch(opcao){
-                    case '1':
-                        System.out.println("1. Norte");
-                        System.out.println("2. Sul");
-                        System.out.println("3. Leste");
-                        System.out.println("4. Oeste");
-                        char opcao2;
+            switch(opcao){
+                case '1':
+                    System.out.println("1. Norte");
+                    System.out.println("2. Sul");
+                    System.out.println("3. Leste");
+                    System.out.println("4. Oeste");
+                    char opcao2;
+                    opcao2 = input.next().charAt(0);
+                        
+                    while(opcao2 != '1' && opcao2 != '2' && opcao2 != '3' && opcao2 != '4'){
+                        System.out.println("Alternativa inválida, digite novamente:");
                         opcao2 = input.next().charAt(0);
+                    }
                         
-                        while(opcao2 != '1' && opcao2 != '2' && opcao2 != '3' && opcao2 != '4'){
-                            System.out.println("Alternativa inválida, digite novamente:");
-                            opcao2 = input.next().charAt(0);
-                        }
-                        
-                        if(opcao2 == '1'){
+                    switch(opcao2){
+                        case '1':
                             if(y == 1){
-                                System.out.println("Você está no limite");
+                                    System.out.println("Você está no limite");
                             }else{
                                 y = y - 1;
                                 mov = true;
-                            }
-                            
-                        }else if(opcao2 == '2'){
+                            }   
+                            break;
+                                
+                        case '2':
                             if(y == 10){
                                 System.out.println("Você está no limite");
                             }else{
                                 y = y + 1;
                                 mov = true;
                             }
-                            
-                        }else if(opcao2 == '3'){
+                            break;
+                                
+                        case '3':
                             if(x == 10){
                                 System.out.println("Você está no limite.");
                             }else{
                                 x = x + 1;
                                 mov = true;
                             }
+                            break;
                             
-                        }else if(opcao2 == '4'){
+                        case '4':
                             if(x == 1){
                                 System.out.println("Você está no limite.");
                             }else{
                                 x = x - 1;
                                 mov = true;
                             }
-                        }
-                        break;
+                            break;
+                    }
+                    break;
                         
-                    case '2':
-                        funcaoGPS(x,y);
-                        break;
+                case '2':
+                    funcaoGPS(x,y);
+                    break;
                         
-                    case '3':
-                        funcaoRelogio(tempo);
-                        break;
-                        
-                    default:
-                        System.out.println("Alternativa inválida, digite novamente:");
-                        opcao = input.next().charAt(0);   
-            } 
+                case '3':
+                    funcaoRelogio(tempo);
+                    break;
+
+                case '4':
+                    gameOn = mainMenu();
+                    break;
+                    
+                default:
+                    System.out.println("Alternativa inválida, digite novamente:");
+                    opcao = input.next().charAt(0);   
+            }    
         }   
+        
+        if(gameOn){
+            contGame = 1;
+        }else{
+            contGame = 0;
+        }
         
         tempo = tempo + penalidadeTempo;
         retornoMov[0] = x;
         retornoMov[1] = y;
         retornoMov[2] = tempo;
+        retornoMov[3] = contGame;
+        
         return retornoMov;
     }
         
     // Função onde mostra a quantidade de casas necessarias para o jogador chegar em um determinado ponto
     static void funcaoGPS(int x, int y) { 
-        
         int distX = 0, distY = 0, 
-            familiaX = 5, familiaY = 16,
-            aeroportoX = 3, aeroportoY = 1,
-            portoX = 20, portoY = 17,
-            estradaX = 18, estradaY = 1;
+            familiaX = 4, familiaY = 7,
+            aeroportoX = 2, aeroportoY = 1,
+            portoX = 10, portoY = 9,
+            estradaX = 1, estradaY = 9;
         
         System.out.print("Você está na Rua " + x + " com a Rua ");
         switch(y){
@@ -243,15 +264,18 @@ public class MainAntesDoFim {
     
     // Função para ativar funções ou falas de acordo com a posição do jogador no mapa.
     static void funcaoMapa(int x, int y) { 
+        int  familiaX = 4, familiaY = 7,
+        aeroportoX = 2, aeroportoY = 1,
+        portoX = 10, portoY = 9,
+        estradaX = 1, estradaY = 9;
         
-        if(x == 5 && y == 16 ){
+        if(x == familiaX && y == familiaY ){
             System.out.println("Família");
-            rolarDado(5);
-        }else if(x == 3 && y == 1){
+        }else if(x == aeroportoX && y == aeroportoY){
             System.out.println("Aeroporto");
-        }else if(x == 18 && y == 1){
+        }else if(x == estradaX && y == estradaY){
             System.out.println("Estrada");
-        }else if(x == 20 && y == 17){
+        }else if(x == portoX && y == portoY){
             System.out.println("Porto");
         }
   
@@ -316,7 +340,7 @@ public class MainAntesDoFim {
     // Função para rolar dado com n lados
     public static int rolarDado(int opcao) {
         Random gerador = new Random();
-        int numSorteado = -1;
+        int numSorteado;
         
         /*
         System.out.println("Escolha qual dado você quer rolar.");
@@ -364,7 +388,7 @@ public class MainAntesDoFim {
     static void intro() {
         boolean introOn = true;
         int fraseNum = 0;
-        char comando = 'a';
+        char comando;
         
         System.out.println("Digite o número da opção desejada para usar o comando");
                     System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
@@ -422,25 +446,29 @@ public class MainAntesDoFim {
             }
         }
     }
+    
     // Main
     public static void main(String[] args) {
         
-        mainMenu();
-        intro();
+        boolean gameOn = mainMenu();
 
-        //Movimentação
+        // Movimentação
         int[] mov;
-        int x = 10, y = 10, tempo = 0;
-        boolean finish = false;
-        
-        
-        while(finish != true){ //while somente para repetição.
+        int x = 8, y = 4, tempo = 0;
+
+        while(gameOn != false){ // while somente para repetição.
             mov = funcaoMovimentacao(x,y,tempo);
             
             x = mov[0];
             y = mov[1];
             tempo = mov[2];
             
+            if(mov[3] == 0){
+                gameOn = false;
+            }else if (mov[3] == 1)
+                gameOn = true;
+            
+            System.out.println(gameOn + " na main.");
             System.out.println(x);
             System.out.println(y);
             
