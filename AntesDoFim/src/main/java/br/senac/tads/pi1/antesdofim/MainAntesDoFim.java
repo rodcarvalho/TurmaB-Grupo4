@@ -361,21 +361,18 @@ public class MainAntesDoFim {
     static void intro() {
         boolean introOn = true;
         int fraseNum = 0;
+        char resposta;
         char comando;
         
-        System.out.println("Digite o número da opção desejada para usar o comando");
-                    System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
-                    System.out.println("2.  para usar o comando VOLTAR para voltar a história");
-                    System.out.println("3.  para usar o comando AJUDA para v");
-        
-        System.out.println("\n \n Você está voltando da sua hora de almoço no trabalho. "
+        System.out.println("\nVocê está voltando da sua hora de almoço no trabalho. "
                 + "Senta-se na sua mesa de trabalho e olha hora.");
         
-        // Instruções para chamar a função relógio
-        
-        System.out.println("- Ainda tenho alguns minutos antes de voltar ao trabalho. Vou ver alguns memes no celular.");
-        
         while(introOn) {
+            System.out.println("\n Digite o número da opção desejada para usar o comando");
+            System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
+            System.out.println("2. para usar o comando VOLTAR para voltar a história");
+            System.out.println("3. para usar o comando AJUDA para ver instruções do jogo");
+            System.out.println("4. para usar o comando RELÓGIO para ver as horas");
             comando = input.next().charAt(0);
             switch (comando) {
                 case '1':
@@ -385,37 +382,116 @@ public class MainAntesDoFim {
                     fraseNum--;
                     break;
                 case '3':
-                    System.out.println("Digite o número da opção desejada para usar o comando");
+                    System.out.println("\n Digite o número da opção desejada para usar o comando");
                     System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
-                    System.out.println("2.  para usar o comando VOLTAR para voltar a história");
-                    System.out.println("3.  para usar o comando AJUDA para v");
+                    System.out.println("2. para usar o comando VOLTAR para voltar a história");
+                    System.out.println("3. para usar o comando AJUDA para ver instruções do jogo");
+                    System.out.println("4. para usar o comando RELÓGIO para ver as horas");
+                    break;
+                case '4':
+                    funcaoRelogio(0);
+                    break;
+                case '5':
+                    funcaoGPS(8, 4);
+                    break;
+                default: 
+                    System.out.println("Comando inválido");
                     break;
             }
-            
+            if (fraseNum <= 0) {
+                fraseNum = 1;
+            }
             switch (fraseNum) {
                 case 1:
-                    System.out.println("Você pega o celular, entra numa rede social e vê um "
-                    + "vídeo com algum membro do alto escalão do governo esbravejando"
-                    + " ofensas contra um outro país que há tempos tem uma disputa "
-                    + "com um país aliado.");
+                    System.out.println("\nVocê pega o celular, entra numa rede social e vê um "
+                    + "\nvídeo com algum membro do alto escalão do governo esbravejando"
+                    + "\n ofensas contra um outro país que há tempos tem uma disputa "
+                    + "\ncom um país aliado.");
                     break;
                     
                 case 2:
-                    System.out.println("- Meu Deus! Esses caras só sabem falar besteira. "
-                    + "Isso ainda vai custar caro ao país.");
+                    System.out.println("\nVOCÊ - Meu Deus! Esses caras só sabem falar besteira. "
+                    + "\nIsso ainda vai custar caro ao país.");
                     break;
                     
                 case 3:
-                    System.out.println("Descendo mais o feed você começa a ver um, dois, três"
-                    + " vídeos iguais do que parece ser uma embarcação militar pegando fogo. ");
+                    System.out.println("\nDescendo mais o feed você começa a ver um, dois, três"
+                    + "\n vídeos iguais do que parece ser uma embarcação militar pegando fogo. ");
                     break;
                 case 4:
-                    System.out.println("Apesar de ser uma notícia um tanto quanto preocupante,"
-                     + " você continua rolando a página social abaixo e \"ignorando\" "
-                    + "aquele vídeo, afinal, quase todos os dias há alguma polêmica envolvendo"
-                    + " política e essa deve ser apenas mais uma.");
+                    System.out.println("\nApesar de ser uma notícia um tanto quanto preocupante,"
+                     + "\n você continua rolando a página social abaixo e \"ignorando\" "
+                    + "\naquele vídeo, afinal, quase todos os dias há alguma polêmica envolvendo"
+                    + "\n política e essa deve ser apenas mais uma.");
+                    break;
+                case 5:
+                    System.out.println("\nAo rolar as informações na tela do celular,"
+                            + "\n você percebe que aquela notícia está em todos os"
+                            + "\n cantos, em todas as páginas. Todos estão falando"
+                            + "\n sobre isso. Assim que você decide voltar ao vídeo"
+                            + "\n para assistir com mais atenção:");
+                    break;
+                case 6:
+                    System.out.println("\nVÍDEO - É real! A Marinha acaba de confirmar o"
+                            + "\n naufrágio da embarcação F41 - \"Defensora\". "
+                            + "\nAinda não se sabe quem foi o autor do ataque, mas"
+                            + "\n especula-se que tenha sido uma resposta do país"
+                            + "\n ****** em resposta aos constantes ataques difamatórios"
+                            + "\n por parte de membros do Governo Federal, e de disputas"
+                            + "\n políticas. [Segue o vídeo da embarcação em chamas ].");
+                    break;
+                case 7:
+                    System.out.println("\nNaquele momento de choque em que você "
+                            + "\nestá paralisado tentando ainda entender o que estava"
+                            + "\n acontecendo, o seu celular toca…");
+                    System.out.println("CELULAR TOCANDO - Trimmmm...trimmmm...");
+                    break;
+                case 8:
+                    System.out.println("MÃE - Alô? Filho?? Ai meu Deus! Precisamos sair daqui ");
+                    System.out.println("MÃE- Meu Deus! Meu Deus! Eu to tremendo. Precisamos sair daqui! Você viu as notícias?");
+                    System.out.println("Digite o número da sua resposta");
+                    System.out.println("1. Sim. Ainda estou tentando entender o que está acontecendo.");
+                    System.out.println("2. Não. Me conta o que aconteceu?");
+                    resposta = input.next().charAt(0);
+                        switch (resposta) {
+                            case '1':
+                                System.out.println("VOCÊ - Sim. Por que você está tão nervosa?.");
+                                break;
+                            case '2':
+                                System.out.println("VOCÊ - Não. Me conta o que aconteceu?");
+                                break;
+                            default: 
+                                System.out.println("Opção inválida. Seleção automática");
+                                System.out.println("VOCÊ - Não. Me conta o que aconteceu?");
+                        }
+                    break;
+                case 9:
+                    System.out.println("MÃE - COMO ASSIM? Eles vão jogar uma bomba na cidade em 2 horas!! Precisamos sair daqui. Pelo amor de Deus, venha nos buscar!!");
+                    System.out.println("Digite o número da sua resposta");
+                    System.out.println("1. Do que você está falando?");
+                    System.out.println("2. Ta bom! Fiquem prontos! Daqui a pouco chego ai.");
+                    resposta = input.next().charAt(0);
+                        switch (resposta) {
+                            case '1':
+                                System.out.println("VOCÊ - Do que você está falando?!");
+                                break;
+                            case '2':
+                                System.out.println("VOCÊ - Ta bom! Fiquem prontos! Daqui a pouco chego ai.");
+                                break;
+                            default: 
+                                System.out.println("Opção inválida. Seleção automática");
+                                System.out.println("VOCÊ - Ta bom! Fiquem pronto2s! Daqui a pouco chego ai.");
+                        }
+                    break;
+                case 10:
+                    System.out.println("Tu... Tu.... Tu...");
+                    System.out.println("VOCÊ - Alô? ALÔ? MÃE?");
+                    System.out.println("VOCÊ - Porcaria de celular! Preciso correr para casa");
+                    System.out.println("Use o GPS para ver a localização da sua família e vá até ela");
                     introOn = false;
                     break;
+                default:
+                    System.out.println("Comando inválido");
             }
         }
     }
@@ -427,6 +503,10 @@ public class MainAntesDoFim {
         // Movimentação
         int[] mov;
         int x = 8, y = 4, tempo = 0;
+        
+        if(gameOn) {
+            intro();
+        }
 
         while(gameOn != false){ // while somente para repetição.
             mov = funcaoMovimentacao(x,y,tempo);
