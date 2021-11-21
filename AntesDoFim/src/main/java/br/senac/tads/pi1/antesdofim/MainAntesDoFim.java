@@ -234,11 +234,321 @@ public class MainAntesDoFim {
         return numSorteado;
     }
     
+    //Carro 1,2,3
+       public static int carroQuebrado1(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolhaStr;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você desce do carro corendo para ver qual o problema \n Oh não é a Correira que saiu fora do lugar!!! \n Decida qual das 9 caixas caixa contem os itens Necessários para Consertar seu carro! \n ");
+
+            char esco;
+            do {
+                esco = entrada.next().charAt(0);
+
+                switch (esco) {
+                    case '1':
+                        System.out.println("Martelo! \n Morno!!");
+                        break;
+                    case '2':
+                        System.out.println("Chave de Fenda \n Quente!");
+                        break;
+                    case '3':
+                        System.out.println("Pedra Rachada  \n Pegando Fogo!");
+                        break;
+                    case '4':
+                        System.out.println("Correia Nova e Manual \n Sabia que estava por aqui! ");
+                        break;
+                    case '5':
+                        System.out.println("Chave de Boca \n Pegando Fogo!");
+                        break;
+                    case '6':
+                        System.out.println("Massarico \n Quente!");
+                        break;
+                    case '7':
+                        System.out.println("Brinquedo da sua Irmãzinha \n Morno!!");
+                        break;
+                    case '8':
+                        System.out.println("Furadeira! \n Frio!!");
+                        break;
+                    case '9':
+                        System.out.println("Pé de Cabra \n Frio!!");
+                        break;
+
+                    default:
+                        System.out.println("Puts essa Ferramenta não está por aqui!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+            } while (esco != 4);
+        }
+        return tempo;
+    }
+    //2
+           public static int carroQuebrado2(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolha2Str;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você desce do carro correndo para ver qual o problema \n     Droga! você não sabe qual o Problema se ao menos seu pai estivesse aqui ele poderia te ajudar!! \n  Procure e veja qual o Problema do carro, dentre os 9 lugares que você acha que pode estar da direita até a esqueda do carro!!! ");
+
+            char esco;
+            do {
+                
+                esco = entrada.next().charAt(0);
+                switch (esco) {
+                    case 1:
+                        System.out.println("Sem os Pistões!!  \n Para Direita!!");
+                        break;
+                    case 2:
+                        System.out.println("Problemas na Bateria?? \n Para Direita!!");
+
+                        break;
+                    case 3:
+                        System.out.println("Ventuinha parada \n É ISSO!");
+                        break;
+                    case 4:
+                        System.out.println("Sem escapamento! \n Para Esquerda!! ");
+                        break;
+                    case 5:
+                        System.out.println("Chave presa no capo! \n Para Esquerda!!");
+                        break;
+                    case 6:
+                        System.out.println("Ventuianha quebrada \n Para Esquerda!!");
+                        break;
+                    case 7:
+                        System.out.println("Falta de Agua no Sistema! \n Para Esquerda!!");
+                        break;
+                    case 8:
+                        System.out.println("Pedra no Motor!! \n Para Esquerda!!");
+                        break;
+                    case 9:
+                        System.out.println("Pneu \n Para Esquerda!!");
+                        break;
+                    
+                    default:
+                        System.out.println("Essa não é uma opção de Problema!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+    
+            }while (esco != 3);
+            
+
+        }return tempo;
+    }
+    //3
+               public static int carroQuebrado3(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolha3Str;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você desce do carro correndo para ver qual o problema \n     Algo ficou preso na Roda!! \n  Descubra oque é dentre as 9 Possibilidades! ");
+            char esco;
+            do {
+                esco = entrada.next().charAt(0);
+
+                switch (esco) {
+                    case 1:
+                        System.out.println("Pedra  \n Gelado!!");
+                        break;
+                    case 2:
+                        System.out.println("Gelo? \n Frio!!");
+
+                        break;
+                    case 3:
+                        System.out.println("Pedaço de Ferro \n Frio!!");
+                        break;
+                    case 4:
+                        System.out.println("Uma sacola? \n Quente!! ");
+                        break;
+                    case 5:
+                        System.out.println("Faca \n Pegando Fogo!!");
+                        break;
+                    case 6:
+                        System.out.println("Brinquedo de Criança \n Meu deus! Que bom que eu achei, tadinha da criança que perdeu");
+                        break;
+                    case 7:
+                        System.out.println("Madeira quebrada \n Pegando Fogo!!");
+                        break;
+                    case 8:
+                        System.out.println("Escapamento quebrado de outros carros?! \n Quente");
+                        break;
+                    case 9:
+                        System.out.println("Borracha  \n Frio!!");
+                        break;
+
+                    default:
+                        System.out.println("Isso com certeza não está no Pneu!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+            } while (esco != 6);
+
+        }
+        return tempo;
+    }
+    
+    //Carro Familia
+                    public static int carroQuebradoFamilia1(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolhaStr;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você e seu Pai descem do carro correndo para ver qual o problema \n Oh não é a Correira que saiu fora do lugar!!! \n Decida qual das 9 caixas caixa contem os itens Necessários para Consertar seu carro! \n Mas espere, 4 delas pertemcem a Sua mãe, isso deixa o Trabalho bem mais facil!! \n Decida entre as 5 caixas restantes ");
+
+            char esco;
+            do {
+                esco = entrada.next().charAt(0);
+
+                switch (esco) {
+                    case '1':
+                        System.out.println("Martelo! \n Morno!!");
+                        break;
+                    case '2':
+                        System.out.println("Chave de Fenda \n Quente!");
+                        break;
+                    case '3':
+                        System.out.println("Pedra Rachada  \n Pegando Fogo!");
+                        break;
+                    case '4':
+                        System.out.println("Correia Nova e Manual \n Sabia que estava por aqui! ");
+                        break;
+                    case '5':
+                        System.out.println("Chave de Boca \n Pegando Fogo!");
+                        break;
+ 
+                    default:
+                        System.out.println("Puts essa Ferramenta não está por aqui!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+            } while (esco != 4);
+        }
+        return tempo;
+    }
+    // 2
+                        public static int carroQuebradoFamilia2(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolha2Str;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você desce do carro correndo para ver qual o problema \n     Droga! você não sabe qual o Problema !! \n  Procure e veja qual o Problema do carro, dentre os 9 lugares que você acha que pode estar da direita a esqueda do carro!!! \n Espere! seu api tem certeza de que não existem alguns dos problemas que você estava procurando, Isso diminui sua contagem para apenas 5 problemas!! \n Procure dentre os 5 problemas! ");
+
+            char esco;
+            do {
+
+                esco = entrada.next().charAt(0);
+                switch (esco) {
+                    case 1:
+                        System.out.println("Sem os Pistões!!  \n Para Direita!!");
+                        break;
+                    case 2:
+                        System.out.println("Problemas na Bateria?? \n Para Direita!!");
+
+                        break;
+                    case 3:
+                        System.out.println("Ventuinha parada \n É ISSO!");
+                        break;
+                    case 4:
+                        System.out.println("Sem escapamento! \n Para Esquerda!! ");
+                        break;
+                    case 5:
+                        System.out.println("Chave presa no capo! \n Para Esquerda!!");
+                        break;
+
+                    default:
+                        System.out.println("Essa não é uma opção de Problema!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+
+            } while (esco != 3);
+
+        }
+        return tempo;
+    }
+    // 3
+                            public static int carroQuebradoFamilia3(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolha3Str;
+            System.out.println("CLANK, CLACK, CLACK, CLACK, PUUUUuuuuuffff \n O Carro deu Algum Problema! \n Você desce do carro correndo para ver qual o problema \n     Algo ficou preso na Roda!! \n  Descubra oque é dentre as 9 Possibilidades! \n ESPERE sua Irmãzinha disse que viu o tamanho do Objeto, isso Diminui o seu leque de possibilidade para apenas 6! \n Faça a Escolha dentre os 6 objetos que podem estar presos na Roda do Carro! ");
+            char esco;
+            do {
+                esco = entrada.next().charAt(0);
+
+                switch (esco) {
+                    case 1:
+                        System.out.println("Pedra  \n Gelado!!");
+                        break;
+                    case 2:
+                        System.out.println("Gelo? \n Frio Literalmente!!");
+
+                        break;
+                    case 3:
+                        System.out.println("Pedaço de Ferro \n Frio!!");
+                        break;
+                    case 4:
+                        System.out.println("Uma sacola? \n Quente!! ");
+                        break;
+                    case 5:
+                        System.out.println("Faca \n Pegando Fogo!!");
+                        break;
+                    case 6:
+                        System.out.println(" Boneca!! \n Só podia ser né!! Bem que ela reconheceu!");
+                    default:
+                        System.out.println("Isso com certeza não está no Pneu!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+            } while (esco != 6);
+
+        }
+        return tempo;
+    }
+    //Avião
+             public static int saidaAvião(int tempo) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String escolha2Str;
+            System.out.println("Você e Sua familia chegam ao Aeroporto   \n Todos respiram fundo se achando a salvo, porem você percebe que sua mãe parece estranhamente preocupada!"
+                    + " \n onde está a Aeromoça que era a amiga de sua mae que ajudaria eles a entrar no Avião com prioridade??! \n \n Ache a Aeromoça dentro da Aerea em que vocês estão que consistem em 5 salas diferentes!  ");
+
+            char esco;
+            do {
+
+                esco = entrada.next().charAt(0);
+                switch (esco){
+                    case 1:
+                        System.out.println("Sala Principal!  \n Para Cima!!");
+                        break;
+                    case 2:
+                        System.out.println("Banheiros! \n Para Cima!");
+
+                        break;
+                    case 3:
+                        System.out.println("Sala de Entrada! \n É ISSO!");
+                        break;
+                    case 4:
+                        System.out.println("Sala de Embarque Idoso! \n Para Baixo! ");
+                        break;
+                    case 5:
+                        System.out.println("Sala de Espera!  \n Para Baixo!");
+                        break;
+
+                    default:
+                        System.out.println("Essa não é uma opção de Problema!");
+                        tempo = tempo - 2;
+                        break;
+                }
+                tempo = tempo + 2;
+
+            } while (esco != 3);
+
+        }
+        return tempo;
+    }
+
     // Main
     public static void main(String[] args) {
         int selectedOption;
         boolean gameOn = true;
-        
+        int numSorteado = rolarDado(6);
         while (gameOn) {
             System.out.println("##### --- MENU INICIAL --- #####");
             System.out.println(" 1. Instruções");
