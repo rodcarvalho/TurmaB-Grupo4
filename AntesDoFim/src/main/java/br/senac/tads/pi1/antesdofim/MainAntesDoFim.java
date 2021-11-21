@@ -59,17 +59,16 @@ public class MainAntesDoFim {
     // Função para movimentação do jogador no "mapa".
     static int[] funcaoMovimentacao(int x, int y, int tempo) { 
         char opcao;
-        boolean mov = false;
+        boolean mov = false, gameOn = true;
         int[] retornoMov = new int[4];
-        int penalidadeTempo = 5;
-        int contGame;
-        boolean gameOn = true;
+        int contGame, penalidadeTempo = 5;
         
         while(mov != true && gameOn != false){
             System.out.println("1. Escolher a direção para ir. ");
-            System.out.println("2. Olhar o GPS");
-            System.out.println("3. Olhar o relógio");
-            System.out.println("4. Voltar ao menu");
+            System.out.println("2. Olhar o GPS.");
+            System.out.println("3. Olhar o relógio.");
+            System.out.println("4. Ouvir Rádio.");
+            System.out.println("5. Voltar ao menu.");
             opcao = input.next().charAt(0);
             
             switch(opcao){
@@ -89,7 +88,7 @@ public class MainAntesDoFim {
                     switch(opcao2){
                         case '1':
                             if(y == 1){
-                                    System.out.println("Você está no limite");
+                                    System.out.println("Você está no limite.");
                             }else{
                                 y = y - 1;
                                 mov = true;
@@ -98,7 +97,7 @@ public class MainAntesDoFim {
                                 
                         case '2':
                             if(y == 10){
-                                System.out.println("Você está no limite");
+                                System.out.println("Você está no limite.");
                             }else{
                                 y = y + 1;
                                 mov = true;
@@ -132,8 +131,12 @@ public class MainAntesDoFim {
                 case '3':
                     funcaoRelogio(tempo);
                     break;
-
+                    
                 case '4':
+                    funcaoRadio(tempo);
+                    break;
+                    
+                case '5':
                     gameOn = mainMenu();
                     break;
                     
@@ -160,6 +163,7 @@ public class MainAntesDoFim {
         
     // Função onde mostra a quantidade de casas necessarias para o jogador chegar em um determinado ponto
     static void funcaoGPS(int x, int y) { 
+
         int distX = 0, distY = 0, 
             familiaX = 4, familiaY = 7,
             aeroportoX = 2, aeroportoY = 1,
@@ -263,8 +267,9 @@ public class MainAntesDoFim {
     }
     
     // Função para ativar funções ou falas de acordo com a posição do jogador no mapa.
-    static void funcaoMapa(int x, int y) { 
-        int  familiaX = 4, familiaY = 7,
+    static void funcaoMapa(int x, int y, boolean gameOn) { 
+        int  chanceCarro, aleatorioCarro = 1,
+        familiaX = 4, familiaY = 7,
         aeroportoX = 2, aeroportoY = 1,
         portoX = 10, portoY = 9,
         estradaX = 1, estradaY = 9;
@@ -278,36 +283,44 @@ public class MainAntesDoFim {
         }else if(x == portoX && y == portoY){
             System.out.println("Porto");
         }
-  
+        
+        chanceCarro = rolarDado(20);
+        if(chanceCarro == 20){
+            aleatorioCarro = rolarDado(3);
+        
+            switch(aleatorioCarro){
+                case 1:
+                System.out.println("Problema Carro 1");
+                break;
+                case 2:
+                System.out.println("Problema Carro 2");
+                break;
+                case 3:
+                System.out.println("Problema Carro 3");
+                break;
+            }
+        }else
+            System.out.println("Carro Não Quebrou");
     }
     
     // Função para ativar falas devido ao tempo.\
     static void funcaoRadio(int tempo) {
-        switch(tempo){
-            case 0:
-                System.out.println("(Rádio) Autoridades aconselham a evacuação imediata da cidade.");
-                break;
-            case 5:
-                System.out.println("");
-                break;
-            case 10:
-                System.out.println("");
-                break;
-            case 15:
-                System.out.println("");
-                break;
-            case 20:
-                System.out.println("");
-                break;
-            case 25:
-                System.out.println("");
-                break;
-            case 30:
-                System.out.println("");
-                break;
-            case 40:
-                System.out.println("");
-                break;
+        if(tempo >= 0 && tempo < 5 ){
+            System.out.println("(Rádio) Autoridades aconselham a evacuação imediata da cidade.");
+        }else if(tempo >= 5 && tempo < 10 ){
+            System.out.println("(Rádio) Autoridades estão sendo realocadas para lidar com a crise, mais informações serão repassadas em breve.");
+        }else if(tempo >= 10 && tempo < 15 ){
+            System.out.println("(Rádio) As forças armadas incentivam que a população procure a forma mais rapida de evacuação possível nesse momento.");
+        }else if(tempo >= 15 && tempo < 20 ){
+            System.out.println("(Rádio) Alerta! Busquem seus familiares e se desloquem para algum dos pontos de fuga imediatamente!");
+        }else if(tempo >= 20 && tempo < 25){
+            System.out.println("(Rádio) Atenção, autoridades pedem que as ruas que fazem cruzamento com as avenidas A e C sejam evitadas devido um acidente.");
+        }else if(tempo >= 25 && tempo < 30){
+            System.out.println("(Rádio) Por favor, se desloquem de forma rápida, porem com segurança até os pontos de evacuação.");
+        }else if(tempo >= 30 && tempo < 35){
+            System.out.println("(Rádio) Engarrafamentos devem ser evitados para a eficiência da evacuação, para isso, as ruas 7 e 5 devem ser evitadas!");     
+        }else if(tempo >= 35 && tempo < 40){
+            
         }
             
     }
@@ -340,50 +353,10 @@ public class MainAntesDoFim {
     // Função para rolar dado com n lados
     public static int rolarDado(int opcao) {
         Random gerador = new Random();
-        int numSorteado;
-        
-        /*
-        System.out.println("Escolha qual dado você quer rolar.");
-        System.out.println("Caso o valor seja inválido, será rolado o dado de menor valor!");
-        System.out.println("1. D4 = Dado de 4 lados");
-        System.out.println("2. D6 = Dado de 6 lados");
-        System.out.println("3. D8 = Dado de 8 lados");
-        System.out.println("4. D10 = Dado de 10 lados");
-        System.out.println("5. D12 = Dado de 12 lados");
-        System.out.println("6. D20 = Dado de 20 lados");
-        */
-        
-        switch (opcao) {
-            case 1: 
-                numSorteado = gerador.nextInt(5);
-                break;
-            case 2: 
-                numSorteado = gerador.nextInt(7);
-                break;
-            case 3: 
-                numSorteado = gerador.nextInt(9);
-                break;
-            case 4: 
-                numSorteado = gerador.nextInt(11);
-                break;
-            case 5: 
-                numSorteado = gerador.nextInt(13);
-                break;
-            case 6: 
-                numSorteado = gerador.nextInt(21);
-                break;
-            default:
-                numSorteado = gerador.nextInt(5);
-                break;
-        }
-        if(numSorteado == 0) {
-            numSorteado += 1;
-        }
-        System.out.println("O dado deu " + numSorteado);
+        int numSorteado = gerador.nextInt(opcao) + 1;
         return numSorteado;
     }
     
-
     // Função Historia Intro
     static void intro() {
         boolean introOn = true;
@@ -449,7 +422,6 @@ public class MainAntesDoFim {
     
     // Main
     public static void main(String[] args) {
-        
         boolean gameOn = mainMenu();
 
         // Movimentação
@@ -468,11 +440,9 @@ public class MainAntesDoFim {
             }else if (mov[3] == 1)
                 gameOn = true;
             
-            System.out.println(gameOn + " na main.");
-            System.out.println(x);
-            System.out.println(y);
-            
-            funcaoMapa(x,y);
+            if(gameOn)
+                funcaoMapa(x,y, gameOn);
         }
     }
+
 }
