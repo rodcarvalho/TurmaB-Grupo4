@@ -165,12 +165,7 @@ public class MainAntesDoFim {
 
     // Função onde mostra a quantidade de casas necessarias para o jogador chegar em um determinado ponto
     static void funcaoGPS(int x, int y) {
-
-        int distX = 0, distY = 0,
-                familiaX = 4, familiaY = 7,
-                aeroportoX = 2, aeroportoY = 1,
-                portoX = 10, portoY = 9,
-                estradaX = 1, estradaY = 9;
+        int distX = 0 , distY = 0;
 
         System.out.print("Você está na Rua " + x + " com a Rua ");
         switch (y) {
@@ -218,26 +213,26 @@ public class MainAntesDoFim {
         while (controle != true) {
             switch (entrada) {
                 case '1':
-                    distX = familiaX - x;
-                    distY = familiaY - y;
+                    distX = 4 - x;
+                    distY = 7 - y;
                     System.out.print("A casa dos pais");
                     controle = true;
                     break;
                 case '2':
-                    distX = aeroportoX - x;
-                    distY = aeroportoY - y;
+                    distX = 2 - x;
+                    distY = 1 - y;
                     System.out.print("O aeroporto");
                     controle = true;
                     break;
                 case '3':
-                    distX = portoX - x;
-                    distY = portoY - y;
+                    distX = 10 - x;
+                    distY = 9 - y;
                     System.out.print("O porto");
                     controle = true;
                     break;
                 case '4':
-                    distX = estradaX - x;
-                    distY = estradaY - y;
+                    distX = 1 - x;
+                    distY = 9 - y;
                     System.out.print("A estrada");
                     controle = true;
                     break;
@@ -246,7 +241,7 @@ public class MainAntesDoFim {
                     entrada = input.next().charAt(0);
             }
         }
-
+        
         if (distY > 0) {
             System.out.print(" está em " + distY + "Km para o sul");
         } else if (distY < 0) {
@@ -257,14 +252,18 @@ public class MainAntesDoFim {
 
         if (distX != 0 && distY != 0) {
             System.out.print(" e ");
+
         }
 
         if (distX < 0) {
             System.out.println((-distX) + "Km para o oeste.");
+
         } else if (distX > 0) {
-            System.out.println(distY + "Km para o leste");
+            System.out.println(distX + "Km para o leste");
+
         } else if (distX == 0) {
             System.out.println(".");
+
         }
     }
 
@@ -278,7 +277,7 @@ public class MainAntesDoFim {
                 estradaX = 1, estradaY = 9;
         int[] retornoMapa = new int[3];
 
-        if (x == familiaX && y == familiaY) {
+        if (x == familiaX && y == familiaY && familia == false) {
             familia();
             familia = true;
 
@@ -321,7 +320,7 @@ public class MainAntesDoFim {
             System.out.println("Parece que a estrada está bloqueada.");
 
         } else if (x == portoX && y == portoY && familia == true) {
-            System.out.println("Porto");
+            gameOn = porto(tempo);
             
         } else if (x == portoX && y == portoY && familia == false) {
             System.out.println("MÃE - FILHO CADÊ VOCÊ?? ESTAMOS FICANDO SEM TEMPO.");
@@ -1053,7 +1052,7 @@ public class MainAntesDoFim {
                 embarq = input.next().charAt(0);
         }
 
-        System.out.println("\n \n \n \n Você e seus pais conseguem finalmente entrar no avião! e você finalmente se sente Aliviado"
+        System.out.println("\n \n \n \n Você e seus pais conseguem finalmente entram no avião! E você finalmente se sente Aliviado"
                 + "\nMas no fim algo ainda te incomoda e você fala com sua mãe sobre patricia"
                 + "\n  1. Porque ela parecia tão triste? "
                 + "\n  2. Mãe, Porque ela ficou?");
@@ -1071,6 +1070,61 @@ public class MainAntesDoFim {
         }
         System.out.println("MÃE - O marido e o Filho de patricia estão internados na cidade, eles sofreram um grave acidente de carro mês passado e os dois estão em coma \n"
                 + "\nMÃE - Duvido muito que consigam sair... sua mãe se escora no seu pai e parece dormir e você fica um pouco chocado mas no fim balança a cabeça em negação e luto \nFinalmente o avião levanta voo e depois de alguns segundos de voo no horrizonte você vê uma frota de navios saindo tambêm para o porto mais proximo \nAgora aliviado você finalmente consegue relaxar e dormir e rezar por aqueles que ainda estão correndo contra o tempo na cidade! \n \n \n");
+        
+        if(tempo > 150){
+            System.out.println("O avião decola porém não há tempo para fugir. Um forte estrondo surge e atinge o avião. ");
+            System.out.println("                               ________________\n" +
+"                          ____/ (  (    )   )  \\___\n" +
+"                         /( (  (  )   _    ))  )   )\\\n" +
+"                       ((     (   )(    )  )   (   )  )\n" +
+"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
+"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
+"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
+"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
+"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
+"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
+"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
+"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
+"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
+"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
+"                   ((__)        \\\\||lll|l||///          \\_))\n" +
+"                            (   /(/ (  )  ) )\\   )\n" +
+"                          (    ( ( ( | | ) ) )\\   )\n" +
+"                           (   /(| / ( )) ) ) )) )\n" +
+"                         (     ( ((((_(|)_)))))     )\n" +
+"                          (      ||\\(|(|)|/||     )\n" +
+"                        (        |(||(||)||||        )\n" +
+"                          (     //|/l|||)|\\\\ \\     )\n" +
+"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
+"-------------------------------------------------------------------------------");
+        }else{
+                                                        System.out.println("                               ________________\n" +
+"                          ____/ (  (    )   )  \\___\n" +
+"                         /( (  (  )   _    ))  )   )\\\n" +
+"                       ((     (   )(    )  )   (   )  )\n" +
+"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
+"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
+"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
+"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
+"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
+"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
+"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
+"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
+"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
+"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
+"                   ((__)        \\\\||lll|l||///          \\_))\n" +
+"                            (   /(/ (  )  ) )\\   )\n" +
+"                          (    ( ( ( | | ) ) )\\   )\n" +
+"                           (   /(| / ( )) ) ) )) )\n" +
+"                         (     ( ((((_(|)_)))))     )\n" +
+"                          (      ||\\(|(|)|/||     )\n" +
+"                        (        |(||(||)||||        )\n" +
+"                          (     //|/l|||)|\\\\ \\     )\n" +
+"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
+"-------------------------------------------------------------------------------");
+            System.out.println("O avião decola e você consegue ver pela janela a explosão, felizmente você e sua família estão a salvo.");
+            
+        }
         gameOn = false;
         return gameOn;
     }
@@ -1108,7 +1162,7 @@ public class MainAntesDoFim {
             }
 
             if (numSorteado >= forca) {
-                System.out.println("Sucesso, a Arvore foi Retirada, agora pode continuar o caminho.");
+                System.out.println("Você passou, agora pode continuar o caminho.");
             } else if (numSorteado < forca) {
                 tempo = tempo + 2;
             }
@@ -1267,6 +1321,7 @@ public class MainAntesDoFim {
 "-------------------------------------------------------------------------------");
                         System.out.println("Parabéns, você e sua família escaparam.");
                         System.out.println("Mas esse foi o começo do fim!");
+                        portoOn = false;
                     } else {
                         System.out.println("Enquanto vocês vão apressado em direção a doca 23. Vocês "
                                 + "\nescutam o barulho do que parece ser vários caças militares.");
@@ -1297,6 +1352,7 @@ public class MainAntesDoFim {
 "-------------------------------------------------------------------------------");
                         System.out.println("Você e sua família não conseguiram escapar a tempo.");
                         System.out.println("O fim do mundo acabou de começar.");
+                        portoOn = false;
                     }
                     
                 }          
@@ -1330,7 +1386,8 @@ public class MainAntesDoFim {
             } else if (mov[3] == 1) {
                 gameOn = true;
             }
-
+            System.out.println(x);
+            System.out.println(y);
             if (gameOn) {
                 mapa = funcaoMapa(x, y, tempo, gameOn, familia);
                 tempo = mapa[0];
@@ -1350,7 +1407,30 @@ public class MainAntesDoFim {
                     System.out.println("Você ouve barulhos de sirene. Sente um calafrio");
                     System.out.println("MÃE - Está acontecendo?");
                     System.out.println("PAI - Me abracem. Vai ficar tudo bem.");
-                    System.out.println("");
+                                            System.out.println("                               ________________\n" +
+"                          ____/ (  (    )   )  \\___\n" +
+"                         /( (  (  )   _    ))  )   )\\\n" +
+"                       ((     (   )(    )  )   (   )  )\n" +
+"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
+"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
+"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
+"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
+"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
+"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
+"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
+"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
+"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
+"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
+"                   ((__)        \\\\||lll|l||///          \\_))\n" +
+"                            (   /(/ (  )  ) )\\   )\n" +
+"                          (    ( ( ( | | ) ) )\\   )\n" +
+"                           (   /(| / ( )) ) ) )) )\n" +
+"                         (     ( ((((_(|)_)))))     )\n" +
+"                          (      ||\\(|(|)|/||     )\n" +
+"                        (        |(||(||)||||        )\n" +
+"                          (     //|/l|||)|\\\\ \\     )\n" +
+"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
+"-------------------------------------------------------------------------------");
                     gameOn = false;
 
                 }
