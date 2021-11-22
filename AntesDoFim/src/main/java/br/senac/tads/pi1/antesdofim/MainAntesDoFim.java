@@ -165,7 +165,7 @@ public class MainAntesDoFim {
 
     // Função onde mostra a quantidade de casas necessarias para o jogador chegar em um determinado ponto
     static void funcaoGPS(int x, int y) {
-        int distX = 0 , distY = 0;
+        int distX = 0, distY = 0;
 
         System.out.print("Você está na Rua " + x + " com a Rua ");
         switch (y) {
@@ -241,7 +241,7 @@ public class MainAntesDoFim {
                     entrada = input.next().charAt(0);
             }
         }
-        
+
         if (distY > 0) {
             System.out.print(" está em " + distY + "Km para o sul");
         } else if (distY < 0) {
@@ -321,7 +321,7 @@ public class MainAntesDoFim {
 
         } else if (x == portoX && y == portoY && familia == true) {
             gameOn = porto(tempo);
-            
+
         } else if (x == portoX && y == portoY && familia == false) {
             System.out.println("MÃE - FILHO CADÊ VOCÊ?? ESTAMOS FICANDO SEM TEMPO.");
             System.out.println("  1. Já estou indo.");
@@ -356,47 +356,48 @@ public class MainAntesDoFim {
                     System.out.println("Opção inválida, digite novamente:");
                     entrada = input.next().charAt(0);
             }
-        }else if(x == 3 && y == 4 && familia == true){
+        } else if (x == 3 && y == 4 && familia == true) {
             System.out.println("PAI - Acho que o aeroporto fica na Rua Banana mesmo.");
             System.out.println("MÃE - Eu falei.");
-        }else if (x == 7 && y == 7){
+        } else if (x == 7 && y == 7) {
             System.out.println("Você vê um acidente terrivel. Um carro está pegando fogo na calçada e outro entrou em uma das lojas.");
-            if(familia)
+            if (familia) {
                 System.out.println("MÃE - Meu Deus, que horror! Fecha o olho filha.");
-        }else if( x == 4 && y == 9 && familia == true) {
+            }
+        } else if (x == 4 && y == 9 && familia == true) {
             System.out.println("MÃE - Não é nessa rua a Mercearia do seu Zé?");
             System.out.println("PAI - É sim, será se ele está bem?");
             System.out.println("MÃE - Espero que sim.");
-        }else if(x == 6 && y == 8 && familia == true){
+        } else if (x == 6 && y == 8 && familia == true) {
             System.out.println("MÃE - Essa é a escola da tua irmã.");
             System.out.println("IRMÃ - Mãe, será se a tia Regina tá bem?");
             System.out.println("MÃE - Deus queira que sim minha filha.");
-        }else if(x == 8 && y == 10 && familia == true) {
+        } else if (x == 8 && y == 10 && familia == true) {
             System.out.println("PAI - Nestor mora aqui.");
             System.out.println("MÃE - E a família dele? Estão no porto?");
             System.out.println("PAI - Acho que sim.");
-        }else if (x == 1 && y == 1 && familia == true) {
+        } else if (x == 1 && y == 1 && familia == true) {
             System.out.println("MÃE - Estamos proximos já, filha acorde.");
             System.out.println("PAI - Chega mais perto e estaciona em qualquer lugar filho.");
             System.out.println("MÃE - Vou avisar a Patricia.");
-        }else if (x == 2 && y == 2 && familia == true) {
+        } else if (x == 2 && y == 2 && familia == true) {
             System.out.println("MÃE - Estamos proximos já, filha acorde.");
             System.out.println("PAI - Chega mais perto e estaciona em qualquer lugar filho.");
             System.out.println("MÃE - Vou avisar a Patricia.");
-        }else if (x == 3 && y == 1 && familia == true) {
+        } else if (x == 3 && y == 1 && familia == true) {
             System.out.println("MÃE - Estamos proximos já, falei que o Aeroporto era na rua Banana.");
             System.out.println("PAI - Chega mais perto e estaciona em qualquer lugar filho.");
             System.out.println("MÃE - Vou avisar a Patricia.");
-        }else if (x == 10 && y == 8 && familia == true) {
+        } else if (x == 10 && y == 8 && familia == true) {
             System.out.println("PAI - Estamos chegando, vou tentar avisar ao Nestor. ");
             System.out.println("MÃE - Tá bom, vamos rápido.");
-        }else if (x == 9 && y == 9 && familia == true) {
+        } else if (x == 9 && y == 9 && familia == true) {
             System.out.println("PAI - Estamos chegando, vou tentar avisar ao Nestor. ");
             System.out.println("MÃE - Tá bom, vamos rápido.");
-        }else if (x == 10 && y == 10 && familia == true) {
+        } else if (x == 10 && y == 10 && familia == true) {
             System.out.println("PAI - Estamos chegando, vou tentar avisar ao Nestor. ");
             System.out.println("MÃE - Tá bom, vamos rápido.");
-        }else if (x == 1 && y == 4 && familia == true) {
+        } else if (x == 1 && y == 4 && familia == true) {
             System.out.println("MÃE - A Padaria da Joana fica por aqui.");
             System.out.println("PAI - Espero que estejam bem.");
             System.out.println("MÃE - Também espero.");
@@ -469,23 +470,23 @@ public class MainAntesDoFim {
             System.out.println("(Rádio) Engarrafamentos devem ser evitados para a eficiência da evacuação, para isso, as ruas 7 e 5 devem ser evitadas!");
         } else if (tempo >= 35 && tempo < 40) {
             System.out.println("(Rádio) Rua 6 e Avenida B estão sendo ultilizadas para evacuação de hospitais e postos de saúde, favor evita-las.");
-        } else if ( tempo >= 40 && tempo < 45) {
+        } else if (tempo >= 40 && tempo < 45) {
             System.out.println("(Rádio) Semáforo no cruzamento da rua 2 com a avenida A quebrou por um pequeno acidente. \nA polícia rodoviária está a caminho para o funcionamento da evacuação.");
-        } else if ( tempo >= 45 && tempo < 50) {
+        } else if (tempo >= 45 && tempo < 50) {
             System.out.println("(Rádio) Rua 7 permanece engarrafada e deve ser evitada para rápida fuga. ");
-        } else if ( tempo >= 50 && tempo < 55) {
+        } else if (tempo >= 50 && tempo < 55) {
             System.out.println("(Rádio) Os postos de fuga estão funcionando há toda velocidade possivel, se encaminhe para o posto mais proximo!");
-        } else if ( tempo >= 60 && tempo < 65) {
+        } else if (tempo >= 60 && tempo < 65) {
             System.out.println("(Rádio) Autoridades permanecem encaminhando ônibus em caso de problemas na evacuação, que devem ser usados em últimos casos.");
-        } else if ( tempo >= 70 && tempo < 75) {
+        } else if (tempo >= 70 && tempo < 75) {
             System.out.println("(Rádio) Por favor, rastreem seus familiares ou os tenha consigo nos postos de fuga.");
-        } else if ( tempo >= 80 && tempo < 85) {
+        } else if (tempo >= 80 && tempo < 85) {
             System.out.println("(Rádio) Passageiros da rua 7 devem deixar seus veículos e se dirigirem para a avenida E, 3 ônibus estão prontos para seguirem aos postos de evacuação.");
-        }else if ( tempo >= 85 && tempo < 90) {
+        } else if (tempo >= 85 && tempo < 90) {
             System.out.println("(Rádio) Um acidente ocorreu na avenida C e os bombeiros já foram acionados. Sigam em segurança!");
-        }else if ( tempo >= 95 && tempo < 100) {
+        } else if (tempo >= 95 && tempo < 100) {
             System.out.println("(Rádio) As estações de rádio comunicadoras estão agora sendo evacuadas. Finalizamos nossas transmissões.");
-        }else if ( tempo >= 100 && tempo < 105) {
+        } else if (tempo >= 100 && tempo < 105) {
             System.out.println("(Rádio) ** ALERTA ** Autoridades aconselham a evacuação imediata da cidade.");
         }
     }
@@ -662,7 +663,6 @@ public class MainAntesDoFim {
         }
     }
 
-
     static void familia() {
         char entrada;
         System.out.println("Você chega na casa dos seus pais. \nSeus pais estão esperando já na frente.");
@@ -680,10 +680,10 @@ public class MainAntesDoFim {
                 break;
             default:
                 System.out.println("Opção Inválida, digite novamente:");
-                entrada = input.next().charAt(0); 
+                entrada = input.next().charAt(0);
         }
         System.out.println("MÃE - Falei com a Patricia, aquela da igreja, sabe? Ela trabalha no aeroporto "
-                       + "\n      Ela disse que consegue passagens para nós. ");
+                + "\n      Ela disse que consegue passagens para nós. ");
         System.out.println("PAI - O Nestor falou que está comandando um dos navios do porto, podemos ir com ele.");
         System.out.println("1. Vamos tentar o aeroporto.");
         System.out.println("2. Vamos para o porto.");
@@ -697,11 +697,11 @@ public class MainAntesDoFim {
                 break;
             default:
                 System.out.println("Opção Inválida, digite novamente:");
-                entrada = input.next().charAt(0); 
+                entrada = input.next().charAt(0);
         }
         System.out.println("MÃE - Sua irmã está dormindo no meio disso tudo, dá pra acreditar?");
         System.out.println("PAI - Vamos logo, entrem no carro.");
-    }   
+    }
 
     // Função CarroQuebrado1
     public static int carroQuebrado1(int tempo) {
@@ -1070,60 +1070,60 @@ public class MainAntesDoFim {
         }
         System.out.println("MÃE - O marido e o Filho de patricia estão internados na cidade, eles sofreram um grave acidente de carro mês passado e os dois estão em coma \n"
                 + "\nMÃE - Duvido muito que consigam sair... sua mãe se escora no seu pai e parece dormir e você fica um pouco chocado mas no fim balança a cabeça em negação e luto \nFinalmente o avião levanta voo e depois de alguns segundos de voo no horrizonte você vê uma frota de navios saindo tambêm para o porto mais proximo \nAgora aliviado você finalmente consegue relaxar e dormir e rezar por aqueles que ainda estão correndo contra o tempo na cidade! \n \n \n");
-        
-        if(tempo > 150){
+
+        if (tempo > 150) {
             System.out.println("O avião decola porém não há tempo para fugir. Um forte estrondo surge e atinge o avião. ");
-            System.out.println("                               ________________\n" +
-"                          ____/ (  (    )   )  \\___\n" +
-"                         /( (  (  )   _    ))  )   )\\\n" +
-"                       ((     (   )(    )  )   (   )  )\n" +
-"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
-"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
-"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
-"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
-"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
-"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
-"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
-"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
-"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
-"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
-"                   ((__)        \\\\||lll|l||///          \\_))\n" +
-"                            (   /(/ (  )  ) )\\   )\n" +
-"                          (    ( ( ( | | ) ) )\\   )\n" +
-"                           (   /(| / ( )) ) ) )) )\n" +
-"                         (     ( ((((_(|)_)))))     )\n" +
-"                          (      ||\\(|(|)|/||     )\n" +
-"                        (        |(||(||)||||        )\n" +
-"                          (     //|/l|||)|\\\\ \\     )\n" +
-"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
-"-------------------------------------------------------------------------------");
-        }else{
-                                                        System.out.println("                               ________________\n" +
-"                          ____/ (  (    )   )  \\___\n" +
-"                         /( (  (  )   _    ))  )   )\\\n" +
-"                       ((     (   )(    )  )   (   )  )\n" +
-"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
-"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
-"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
-"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
-"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
-"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
-"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
-"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
-"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
-"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
-"                   ((__)        \\\\||lll|l||///          \\_))\n" +
-"                            (   /(/ (  )  ) )\\   )\n" +
-"                          (    ( ( ( | | ) ) )\\   )\n" +
-"                           (   /(| / ( )) ) ) )) )\n" +
-"                         (     ( ((((_(|)_)))))     )\n" +
-"                          (      ||\\(|(|)|/||     )\n" +
-"                        (        |(||(||)||||        )\n" +
-"                          (     //|/l|||)|\\\\ \\     )\n" +
-"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
-"-------------------------------------------------------------------------------");
+            System.out.println("                               ________________\n"
+                    + "                          ____/ (  (    )   )  \\___\n"
+                    + "                         /( (  (  )   _    ))  )   )\\\n"
+                    + "                       ((     (   )(    )  )   (   )  )\n"
+                    + "                     ((/  ( _(   )   (   _) ) (  () )  )\n"
+                    + "                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n"
+                    + "                   ( (  )    (      (  )    )   ) . ) (   )\n"
+                    + "                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n"
+                    + "                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n"
+                    + "                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n"
+                    + "                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n"
+                    + "                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n"
+                    + "                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n"
+                    + "                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n"
+                    + "                   ((__)        \\\\||lll|l||///          \\_))\n"
+                    + "                            (   /(/ (  )  ) )\\   )\n"
+                    + "                          (    ( ( ( | | ) ) )\\   )\n"
+                    + "                           (   /(| / ( )) ) ) )) )\n"
+                    + "                         (     ( ((((_(|)_)))))     )\n"
+                    + "                          (      ||\\(|(|)|/||     )\n"
+                    + "                        (        |(||(||)||||        )\n"
+                    + "                          (     //|/l|||)|\\\\ \\     )\n"
+                    + "                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n"
+                    + "-------------------------------------------------------------------------------");
+        } else {
+            System.out.println("                               ________________\n"
+                    + "                          ____/ (  (    )   )  \\___\n"
+                    + "                         /( (  (  )   _    ))  )   )\\\n"
+                    + "                       ((     (   )(    )  )   (   )  )\n"
+                    + "                     ((/  ( _(   )   (   _) ) (  () )  )\n"
+                    + "                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n"
+                    + "                   ( (  )    (      (  )    )   ) . ) (   )\n"
+                    + "                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n"
+                    + "                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n"
+                    + "                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n"
+                    + "                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n"
+                    + "                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n"
+                    + "                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n"
+                    + "                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n"
+                    + "                   ((__)        \\\\||lll|l||///          \\_))\n"
+                    + "                            (   /(/ (  )  ) )\\   )\n"
+                    + "                          (    ( ( ( | | ) ) )\\   )\n"
+                    + "                           (   /(| / ( )) ) ) )) )\n"
+                    + "                         (     ( ((((_(|)_)))))     )\n"
+                    + "                          (      ||\\(|(|)|/||     )\n"
+                    + "                        (        |(||(||)||||        )\n"
+                    + "                          (     //|/l|||)|\\\\ \\     )\n"
+                    + "                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n"
+                    + "-------------------------------------------------------------------------------");
             System.out.println("O avião decola e você consegue ver pela janela a explosão, felizmente você e sua família estão a salvo.");
-            
+
         }
         gameOn = false;
         return gameOn;
@@ -1170,8 +1170,6 @@ public class MainAntesDoFim {
         return tempo;
     }
 
-
-    
     // Porto
     static boolean porto(int tempo) {
         boolean portoOn = true;
@@ -1179,16 +1177,16 @@ public class MainAntesDoFim {
         char resposta;
         char comando;
         int tempoGasto = tempo;
-        
+
         System.out.println("VOCÊ - Finalmente chegamos no Porto. Precisamos entrar numa das balsas ou num navio.");
         System.out.println("PAI - Graças a DEUS! Filha ajude sua mãe. Vamos filho, vamos rápido. Precisamos encontrar o Nestor o mais rápido possível.");
         System.out.println("PAI - Minha queridas, fiquem aqui. Não saim daqui em hipótese alguma!");
 
-        while(portoOn) {
+        while (portoOn) {
             System.out.println("\nDigite o número da opção desejada para usar o comando");
             System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
             System.out.println("2. para usar o comando VOLTAR para voltar a história");
-   
+
             comando = input.next().charAt(0);
             switch (comando) {
                 case '1':
@@ -1197,45 +1195,45 @@ public class MainAntesDoFim {
                 case '2':
                     fraseNum--;
                     break;
-                default: 
+                default:
                     System.out.println("Comando inválido");
                     break;
             }
-            
+
             switch (fraseNum) {
                 case 1:
                     System.out.println("PAI - Nessa loucura provavelmente ele deve estar em uma das docas.");
                     System.out.println("VOCÊ - Não sei se vamos conseguir encontrar uma pessoa nesse pandemônio."
                             + "Isso aqui tá parecendo um formigueiro.");
                     break;
-                    
+
                 case 2:
                     boolean barcoDoNestor = false;
                     System.out.println("PAI - Vamos! Procure por um velho grisalho com um chapéu de capitão.");
-                    
+
                     while (!barcoDoNestor) {
-                        
+
                         System.out.println("Digite o número da opção desejada para usar o comando");
                         System.out.println("1. Olhar doca 21");
                         System.out.println("2. Olhar doca 22");
                         System.out.println("3. Olhar doca 23");
                         comando = input.next().charAt(0);
-                        
+
                         switch (comando) {
-                            case '1': 
+                            case '1':
                                 System.out.println("\nVocês andam de forma apressada até a doca 21"
                                         + "\nnela é possível ver um grande navio cargueiro abarrotado de pessoas."
                                         + "\nUm capitão tenta organizar a fila e grita para que a as pessoas matenham a calma.");
                                 System.out.println("PAI - Aquele não é o Nestor vamos sair daqui. Esse navio não cabe mais ninguém.");
                                 System.out.println("\n\n VOCÊ - Vamos olhar outro lugar.");
-                                tempoGasto =+ 10;
+                                tempoGasto = +10;
                                 break;
                             case '2':
                                 System.out.println("\nAo chegarem na doca 22 vocês avistam um grande navio da marinha. "
                                         + "\nNesse ponto a existem muito policiais e soldados."
                                         + "\nÉ possível ver o cordão de isolamento feito de policiais e escudos."
                                         + "\nAtrás deles, você reconhece alguns políticos e também percebem pessoas muito bem vestidas.");
-                                
+
                                 System.out.println("Digite o número da opção desejada para usar o comando");
                                 System.out.println("1. Tentar avançar o bloqueio");
                                 System.out.println("2. Sair da doca");
@@ -1250,7 +1248,7 @@ public class MainAntesDoFim {
                                     System.out.println("PAI - Filho vamos embora. Esses vermes não vão nos ajudar. O Nestor não é militar.");
                                     System.out.println("Vocês dois vão em direção a próxima doca escolhida.");
                                 }
-                                tempoGasto =+ 12;
+                                tempoGasto = +12;
                                 break;
                             case '3':
                                 System.out.println("Você e seu pai se deparam com uma embarcação não muito grande. "
@@ -1265,7 +1263,7 @@ public class MainAntesDoFim {
                                 System.out.println("VOCÊ - O que aconteceu? Deu certo?");
                                 System.out.println("PAI - Sim! Vamos logo. Corre.");
                                 barcoDoNestor = true;
-                                tempoGasto =+ 15;
+                                tempoGasto = +15;
                                 break;
                             default:
                                 break;
@@ -1281,44 +1279,44 @@ public class MainAntesDoFim {
                     System.out.println("MÃE - Amém!! Corre!");
                     System.out.println("Vocês vão apressados na direção da doca onde está o barco do Nestor."
                             + "\nAlgumas pessoas esbarram em vocês e vice versa mas vocês seguem em frente");
-                    
+
                     if (tempoGasto <= 150) {
                         System.out.println("\n\n Chegando na doca, Nestor abre caminho para vocês. A embarcação "
-                            + "está apinhada de gente. Algumas, como vocês, carregam alguns poucos pertences.");
+                                + "está apinhada de gente. Algumas, como vocês, carregam alguns poucos pertences.");
                         System.out.println("A tripulação embarca e o navio começa a zarpar. Alguns pessoas "
                                 + "\ndesesperadas tentam embarcar se pendurando. Nem todas conseguem se segurar");
                         System.out.println("Olhando para o porto ainda é possível ver muitas pessoas e outras"
                                 + "\nembarcações saindo.");
                         System.out.println("...");
-                        
+
                         System.out.println("Alguns minutos depois, a uma boa distancia do porto, vocês escutam"
                                 + "\nbarulhos de caças. Olhando pra cima é possivel ver um rastro branco."
                                 + "\nPouco tempo depois uma onda de choque seguida de um barulho terrível"
                                 + "\nalcança vocês. Ao longe é possível ver uma enorme coluna de fumaça subir.");
-                        System.out.println("                               ________________\n" +
-"                          ____/ (  (    )   )  \\___\n" +
-"                         /( (  (  )   _    ))  )   )\\\n" +
-"                       ((     (   )(    )  )   (   )  )\n" +
-"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
-"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
-"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
-"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
-"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
-"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
-"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
-"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
-"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
-"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
-"                   ((__)        \\\\||lll|l||///          \\_))\n" +
-"                            (   /(/ (  )  ) )\\   )\n" +
-"                          (    ( ( ( | | ) ) )\\   )\n" +
-"                           (   /(| / ( )) ) ) )) )\n" +
-"                         (     ( ((((_(|)_)))))     )\n" +
-"                          (      ||\\(|(|)|/||     )\n" +
-"                        (        |(||(||)||||        )\n" +
-"                          (     //|/l|||)|\\\\ \\     )\n" +
-"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
-"-------------------------------------------------------------------------------");
+                        System.out.println("                               ________________\n"
+                                + "                          ____/ (  (    )   )  \\___\n"
+                                + "                         /( (  (  )   _    ))  )   )\\\n"
+                                + "                       ((     (   )(    )  )   (   )  )\n"
+                                + "                     ((/  ( _(   )   (   _) ) (  () )  )\n"
+                                + "                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n"
+                                + "                   ( (  )    (      (  )    )   ) . ) (   )\n"
+                                + "                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n"
+                                + "                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n"
+                                + "                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n"
+                                + "                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n"
+                                + "                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n"
+                                + "                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n"
+                                + "                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n"
+                                + "                   ((__)        \\\\||lll|l||///          \\_))\n"
+                                + "                            (   /(/ (  )  ) )\\   )\n"
+                                + "                          (    ( ( ( | | ) ) )\\   )\n"
+                                + "                           (   /(| / ( )) ) ) )) )\n"
+                                + "                         (     ( ((((_(|)_)))))     )\n"
+                                + "                          (      ||\\(|(|)|/||     )\n"
+                                + "                        (        |(||(||)||||        )\n"
+                                + "                          (     //|/l|||)|\\\\ \\     )\n"
+                                + "                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n"
+                                + "-------------------------------------------------------------------------------");
                         System.out.println("Parabéns, você e sua família escaparam.");
                         System.out.println("Mas esse foi o começo do fim!");
                         portoOn = false;
@@ -1326,41 +1324,39 @@ public class MainAntesDoFim {
                         System.out.println("Enquanto vocês vão apressado em direção a doca 23. Vocês "
                                 + "\nescutam o barulho do que parece ser vários caças militares.");
                         System.out.println("Alguns segundos depois, um clarão avança na direção do porto.");
-                        System.out.println("                               ________________\n" +
-"                          ____/ (  (    )   )  \\___\n" +
-"                         /( (  (  )   _    ))  )   )\\\n" +
-"                       ((     (   )(    )  )   (   )  )\n" +
-"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
-"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
-"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
-"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
-"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
-"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
-"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
-"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
-"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
-"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
-"                   ((__)        \\\\||lll|l||///          \\_))\n" +
-"                            (   /(/ (  )  ) )\\   )\n" +
-"                          (    ( ( ( | | ) ) )\\   )\n" +
-"                           (   /(| / ( )) ) ) )) )\n" +
-"                         (     ( ((((_(|)_)))))     )\n" +
-"                          (      ||\\(|(|)|/||     )\n" +
-"                        (        |(||(||)||||        )\n" +
-"                          (     //|/l|||)|\\\\ \\     )\n" +
-"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
-"-------------------------------------------------------------------------------");
+                        System.out.println("                               ________________\n"
+                                + "                          ____/ (  (    )   )  \\___\n"
+                                + "                         /( (  (  )   _    ))  )   )\\\n"
+                                + "                       ((     (   )(    )  )   (   )  )\n"
+                                + "                     ((/  ( _(   )   (   _) ) (  () )  )\n"
+                                + "                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n"
+                                + "                   ( (  )    (      (  )    )   ) . ) (   )\n"
+                                + "                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n"
+                                + "                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n"
+                                + "                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n"
+                                + "                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n"
+                                + "                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n"
+                                + "                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n"
+                                + "                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n"
+                                + "                   ((__)        \\\\||lll|l||///          \\_))\n"
+                                + "                            (   /(/ (  )  ) )\\   )\n"
+                                + "                          (    ( ( ( | | ) ) )\\   )\n"
+                                + "                           (   /(| / ( )) ) ) )) )\n"
+                                + "                         (     ( ((((_(|)_)))))     )\n"
+                                + "                          (      ||\\(|(|)|/||     )\n"
+                                + "                        (        |(||(||)||||        )\n"
+                                + "                          (     //|/l|||)|\\\\ \\     )\n"
+                                + "                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n"
+                                + "-------------------------------------------------------------------------------");
                         System.out.println("Você e sua família não conseguiram escapar a tempo.");
                         System.out.println("O fim do mundo acabou de começar.");
                         portoOn = false;
                     }
-                    
-                }          
-            } 
+
+            }
+        }
         return portoOn = false;
-    } 
-        
-        
+    }
 
     // Main
     public static void main(String[] args) {
@@ -1386,8 +1382,7 @@ public class MainAntesDoFim {
             } else if (mov[3] == 1) {
                 gameOn = true;
             }
-            System.out.println(x);
-            System.out.println(y);
+
             if (gameOn) {
                 mapa = funcaoMapa(x, y, tempo, gameOn, familia);
                 tempo = mapa[0];
@@ -1402,35 +1397,35 @@ public class MainAntesDoFim {
                     familia = false;
                 }
             }
-            if(gameOn){
-                if(tempo >= 150){
+            if (gameOn) {
+                if (tempo >= 150) {
                     System.out.println("Você ouve barulhos de sirene. Sente um calafrio");
                     System.out.println("MÃE - Está acontecendo?");
                     System.out.println("PAI - Me abracem. Vai ficar tudo bem.");
-                                            System.out.println("                               ________________\n" +
-"                          ____/ (  (    )   )  \\___\n" +
-"                         /( (  (  )   _    ))  )   )\\\n" +
-"                       ((     (   )(    )  )   (   )  )\n" +
-"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
-"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
-"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
-"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
-"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
-"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
-"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
-"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
-"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
-"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
-"                   ((__)        \\\\||lll|l||///          \\_))\n" +
-"                            (   /(/ (  )  ) )\\   )\n" +
-"                          (    ( ( ( | | ) ) )\\   )\n" +
-"                           (   /(| / ( )) ) ) )) )\n" +
-"                         (     ( ((((_(|)_)))))     )\n" +
-"                          (      ||\\(|(|)|/||     )\n" +
-"                        (        |(||(||)||||        )\n" +
-"                          (     //|/l|||)|\\\\ \\     )\n" +
-"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
-"-------------------------------------------------------------------------------");
+                    System.out.println("                               ________________\n"
+                            + "                          ____/ (  (    )   )  \\___\n"
+                            + "                         /( (  (  )   _    ))  )   )\\\n"
+                            + "                       ((     (   )(    )  )   (   )  )\n"
+                            + "                     ((/  ( _(   )   (   _) ) (  () )  )\n"
+                            + "                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n"
+                            + "                   ( (  )    (      (  )    )   ) . ) (   )\n"
+                            + "                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n"
+                            + "                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n"
+                            + "                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n"
+                            + "                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n"
+                            + "                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n"
+                            + "                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n"
+                            + "                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n"
+                            + "                   ((__)        \\\\||lll|l||///          \\_))\n"
+                            + "                            (   /(/ (  )  ) )\\   )\n"
+                            + "                          (    ( ( ( | | ) ) )\\   )\n"
+                            + "                           (   /(| / ( )) ) ) )) )\n"
+                            + "                         (     ( ((((_(|)_)))))     )\n"
+                            + "                          (      ||\\(|(|)|/||     )\n"
+                            + "                        (        |(||(||)||||        )\n"
+                            + "                          (     //|/l|||)|\\\\ \\     )\n"
+                            + "                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n"
+                            + "-------------------------------------------------------------------------------");
                     gameOn = false;
 
                 }
