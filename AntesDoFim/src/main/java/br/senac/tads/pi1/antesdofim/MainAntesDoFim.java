@@ -658,9 +658,11 @@ public class MainAntesDoFim {
                     break;
                 default:
                     System.out.println("Comando inválido");
+                    break;
             }
         }
     }
+
 
     static void familia() {
         char entrada;
@@ -1113,6 +1115,196 @@ public class MainAntesDoFim {
         }
         return tempo;
     }
+
+
+    
+    // Porto
+    static boolean porto(int tempo) {
+        boolean portoOn = true;
+        int fraseNum = 0;
+        char resposta;
+        char comando;
+        int tempoGasto = tempo;
+        
+        System.out.println("VOCÊ - Finalmente chegamos no Porto. Precisamos entrar numa das balsas ou num navio.");
+        System.out.println("PAI - Graças a DEUS! Filha ajude sua mãe. Vamos filho, vamos rápido. Precisamos encontrar o Nestor o mais rápido possível.");
+        System.out.println("PAI - Minha queridas, fiquem aqui. Não saim daqui em hipótese alguma!");
+
+        while(portoOn) {
+            System.out.println("\nDigite o número da opção desejada para usar o comando");
+            System.out.println("1. para usar o comando PRÓXIMO para proseguir a história");
+            System.out.println("2. para usar o comando VOLTAR para voltar a história");
+   
+            comando = input.next().charAt(0);
+            switch (comando) {
+                case '1':
+                    fraseNum++;
+                    break;
+                case '2':
+                    fraseNum--;
+                    break;
+                default: 
+                    System.out.println("Comando inválido");
+                    break;
+            }
+            
+            switch (fraseNum) {
+                case 1:
+                    System.out.println("PAI - Nessa loucura provavelmente ele deve estar em uma das docas.");
+                    System.out.println("VOCÊ - Não sei se vamos conseguir encontrar uma pessoa nesse pandemônio."
+                            + "Isso aqui tá parecendo um formigueiro.");
+                    break;
+                    
+                case 2:
+                    boolean barcoDoNestor = false;
+                    System.out.println("PAI - Vamos! Procure por um velho grisalho com um chapéu de capitão.");
+                    
+                    while (!barcoDoNestor) {
+                        
+                        System.out.println("Digite o número da opção desejada para usar o comando");
+                        System.out.println("1. Olhar doca 21");
+                        System.out.println("2. Olhar doca 22");
+                        System.out.println("3. Olhar doca 23");
+                        comando = input.next().charAt(0);
+                        
+                        switch (comando) {
+                            case '1': 
+                                System.out.println("\nVocês andam de forma apressada até a doca 21"
+                                        + "\nnela é possível ver um grande navio cargueiro abarrotado de pessoas."
+                                        + "\nUm capitão tenta organizar a fila e grita para que a as pessoas matenham a calma.");
+                                System.out.println("PAI - Aquele não é o Nestor vamos sair daqui. Esse navio não cabe mais ninguém.");
+                                System.out.println("\n\n VOCÊ - Vamos olhar outro lugar.");
+                                tempoGasto =+ 10;
+                                break;
+                            case '2':
+                                System.out.println("\nAo chegarem na doca 22 vocês avistam um grande navio da marinha. "
+                                        + "\nNesse ponto a existem muito policiais e soldados."
+                                        + "\nÉ possível ver o cordão de isolamento feito de policiais e escudos."
+                                        + "\nAtrás deles, você reconhece alguns políticos e também percebem pessoas muito bem vestidas.");
+                                
+                                System.out.println("Digite o número da opção desejada para usar o comando");
+                                System.out.println("1. Tentar avançar o bloqueio");
+                                System.out.println("2. Sair da doca");
+                                comando = input.next().charAt(0);
+                                if (comando == '1') {
+                                    System.out.println("VOCÊ - Ei me deixem passar!! Deixem minha família passar!!");
+                                    System.out.println("O policial a sua frente te dá um empurrão com o escudo e arma um golde cassetete. "
+                                            + "\nVocê desvia sendo  atingido de leve no ombro direito.");
+                                    System.out.println("VOCÊ - Nos deixem passar!! ISSO É CULPA DE VOCÊS!");
+                                    System.out.println("PAI - Filho você está bem? Essa corja não vai nos ajudar. Vamos embora");
+                                } else {
+                                    System.out.println("PAI - Filho vamos embora. Esses vermes não vão nos ajudar. O Nestor não é militar.");
+                                    System.out.println("Vocês dois vão em direção a próxima doca escolhida.");
+                                }
+                                tempoGasto =+ 12;
+                                break;
+                            case '3':
+                                System.out.println("Você e seu pai se deparam com uma embarcação não muito grande. "
+                                        + "\nalgumas pessoas parecem tentar negociar uma forma de embarcar com alguns homens que parece trabalhar naquela embarcação."
+                                        + "\nAlgumas entram em desespero ao receber uma resposta negativa sobre o embarque e são prontametne enchotadas");
+                                System.out.println("PAI - Ali! Achamos! Fique aqui vou falar com ele.");
+                                System.out.println("Seu pai abre passagem até um senhor com um chapéu de capitão extremamente velho."
+                                        + "\nos dois dão um aperto de mão firme. Seu pai conversa com o capitão."
+                                        + "\nA conversa parece ficar um pouco tensa e você se aproxima.");
+                                System.out.println("NESTOR - Eu não consigo garantir os lugares por muito tempo. Logo vamos partir");
+                                System.out.println("PAI - Tudo bem, tudo bem. Te devo essa. Vamos filhos, precisamos buscar sua mãe e irmã.");
+                                System.out.println("VOCÊ - O que aconteceu? Deu certo?");
+                                System.out.println("PAI - Sim! Vamos logo. Corre.");
+                                barcoDoNestor = true;
+                                tempoGasto =+ 15;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.println("Vocês voltam correndo para onde deixaram sua mãe e irmã esperando."
+                            + "\nO porto está ainda mais cheio e as pessoas parecem mais aflitas. A hora"
+                            + "\n do ataque se aproxíma e o desespero parece aumentar no semblante de cada um.");
+                    System.out.println("VOCÊ - VAMOS MÃE!! CONSEGUIMOS!! CORRE!");
+                    System.out.println("PAI - Peguem suas coisas, vamos rápido.");
+                    System.out.println("MÃE - Amém!! Corre!");
+                    System.out.println("Vocês vão apressados na direção da doca onde está o barco do Nestor."
+                            + "\nAlgumas pessoas esbarram em vocês e vice versa mas vocês seguem em frente");
+                    
+                    if (tempoGasto <= 150) {
+                        System.out.println("\n\n Chegando na doca, Nestor abre caminho para vocês. A embarcação "
+                            + "está apinhada de gente. Algumas, como vocês, carregam alguns poucos pertences.");
+                        System.out.println("A tripulação embarca e o navio começa a zarpar. Alguns pessoas "
+                                + "\ndesesperadas tentam embarcar se pendurando. Nem todas conseguem se segurar");
+                        System.out.println("Olhando para o porto ainda é possível ver muitas pessoas e outras"
+                                + "\nembarcações saindo.");
+                        System.out.println("...");
+                        
+                        System.out.println("Alguns minutos depois, a uma boa distancia do porto, vocês escutam"
+                                + "\nbarulhos de caças. Olhando pra cima é possivel ver um rastro branco."
+                                + "\nPouco tempo depois uma onda de choque seguida de um barulho terrível"
+                                + "\nalcança vocês. Ao longe é possível ver uma enorme coluna de fumaça subir.");
+                        System.out.println("                               ________________\n" +
+"                          ____/ (  (    )   )  \\___\n" +
+"                         /( (  (  )   _    ))  )   )\\\n" +
+"                       ((     (   )(    )  )   (   )  )\n" +
+"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
+"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
+"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
+"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
+"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
+"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
+"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
+"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
+"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
+"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
+"                   ((__)        \\\\||lll|l||///          \\_))\n" +
+"                            (   /(/ (  )  ) )\\   )\n" +
+"                          (    ( ( ( | | ) ) )\\   )\n" +
+"                           (   /(| / ( )) ) ) )) )\n" +
+"                         (     ( ((((_(|)_)))))     )\n" +
+"                          (      ||\\(|(|)|/||     )\n" +
+"                        (        |(||(||)||||        )\n" +
+"                          (     //|/l|||)|\\\\ \\     )\n" +
+"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
+"-------------------------------------------------------------------------------");
+                        System.out.println("Parabéns, você e sua família escaparam.");
+                        System.out.println("Mas esse foi o começo do fim!");
+                    } else {
+                        System.out.println("Enquanto vocês vão apressado em direção a doca 23. Vocês "
+                                + "\nescutam o barulho do que parece ser vários caças militares.");
+                        System.out.println("Alguns segundos depois, um clarão avança na direção do porto.");
+                        System.out.println("                               ________________\n" +
+"                          ____/ (  (    )   )  \\___\n" +
+"                         /( (  (  )   _    ))  )   )\\\n" +
+"                       ((     (   )(    )  )   (   )  )\n" +
+"                     ((/  ( _(   )   (   _) ) (  () )  )\n" +
+"                    ( (  ( (_)   ((    (   )  .((_ ) .  )_\n" +
+"                   ( (  )    (      (  )    )   ) . ) (   )\n" +
+"                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )\n" +
+"                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )\n" +
+"                 ( (  ( \\ ) (    (_  ( ) ( )  )   ) )  )) ( )\n" +
+"                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )\n" +
+"                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )\n" +
+"                  ((  (   )(    (     _    )   _) _(_ (  (_ )\n" +
+"                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)\n" +
+"                   ((__)        \\\\||lll|l||///          \\_))\n" +
+"                            (   /(/ (  )  ) )\\   )\n" +
+"                          (    ( ( ( | | ) ) )\\   )\n" +
+"                           (   /(| / ( )) ) ) )) )\n" +
+"                         (     ( ((((_(|)_)))))     )\n" +
+"                          (      ||\\(|(|)|/||     )\n" +
+"                        (        |(||(||)||||        )\n" +
+"                          (     //|/l|||)|\\\\ \\     )\n" +
+"                        (/ / //  /|//||||\\\\  \\ \\  \\ _)\n" +
+"-------------------------------------------------------------------------------");
+                        System.out.println("Você e sua família não conseguiram escapar a tempo.");
+                        System.out.println("O fim do mundo acabou de começar.");
+                    }
+                    
+                }          
+            } 
+        return portoOn = false;
+    } 
+        
+        
 
     // Main
     public static void main(String[] args) {
